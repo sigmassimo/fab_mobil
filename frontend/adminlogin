@@ -9,11 +9,10 @@
 </head>
 <body>
     <!-- Name bis jz unklar-->
-    
+    <!--braucht dann generelles Layout, temporär Login-layout-->
         
     <div class="header">
         <h1>Willkommen bei *Name*</h1>
-        
     </div>
     <br>
     <div class="center">
@@ -22,7 +21,7 @@
         <label>
             Admin-Passwort:
         </label>
-        <input type="password" id="Passwort" required>
+        <input type="password" id="Adminpasswort" required>
         </p>
         <button>
             Anmelden
