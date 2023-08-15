@@ -9,7 +9,7 @@
     --blue: #0000ff;
     --white: #fff;
     --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    --font-family: consolas;
+    --font-family: Arial;
   }
   * {
     padding: 0;
@@ -39,7 +39,7 @@
     height: 610px;
     width: max-content;
     background-color: white;
-    border-radius: 25px;
+    border-radius: 22px;
     overflow: hidden;
     padding: 30px 50px 0px 50px;
   }
