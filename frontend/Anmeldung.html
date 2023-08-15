@@ -4,57 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anmeldung *Name*</title>
-    <style>
-        html{
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #b5d334;
-        }
-        body{
-            margin: 0;
-        }
-        .header{
-            padding: 1px;
-            background-color: white;
-            color: #005d56;
-        }
-        h1{
-            padding-left: 20px;
-        }
-        form{
-            padding-left: 40px;
-        }
-        button{
-            margin-top: 20px;
-            background-color: #a9112c;
-        }
-        input{
-            margin-left: 30px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <!-- Name bis jz unklar-->
-   
+    <div class="center">
+        <center>
     <div class="header">
         <h1>Willkommen bei *Name*</h1>
+        
     </div>
     <br>
     <form>
+        <p>
         <label>
             E-Mail:
         </label>
         <input type="email" id="email" placeholder="beispiel@email.com" required>
-        <br>
+        </p>
+        <p class="a">
         <label>
             Passwort:
         </label>
         <input type="password" id="Passwort" required>
-        <br>
+        </p>
         <button>
             Anmelden
         </button>
     </form>
+    </center>
+    </div>
     
     
 </body>
