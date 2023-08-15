@@ -8,7 +8,7 @@
 </head>
 <header>
     <img src="Fabmobil-Logo-300x300.jpg" width="70px">
-    <!-- Dateinamen sind nur erstmal Platzhalter, kann man noch ändern-->
+    <!-- Dateinamen kann man noch ändern-->
     
     <a href="Kalender.html">
          Kalender  
@@ -19,7 +19,7 @@
     
     <a href="Profil.html">
         Name
-        
+        <img src="pfp icon.png" width="30">
     </a>
 
     <hr>
@@ -32,8 +32,10 @@
         <ul>
           <li class="prev">&#10094;</li>
           <li class="next">&#10095;</li>
-          <li>Monat, <span style="font-size:18px">Jahr</span></li>
-        </ul>
+          <li> <label for="Datum">Monat, <span style="font-size:18px">Jahr</span> </label></li>
+          <select name="Datum">
+            <option value="Monat und Jahr"></option>
+          </select>
       </div>
       
       <ul class="weekdays">
