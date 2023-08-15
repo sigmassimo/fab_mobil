@@ -1,0 +1,38 @@
+version: '3.1'
+services:
+    web:
+        build: .
+        ports:
+            - 80:80
+        expose:
+            - 80
+        volumes:
+            - ./htdocs:/var/www/html/
+    mariadb:
+        image: mariadb:10.5
+        environment:
+            MYSQL_ROOT_PASSWORD: 1234
+            MYSQL_DATABASE: SommerCamp
+            MYSQL_USER: SommerCamp
+            MYSQL_PASSWORD: Sommer2023
+        ports:
+            - 3306:3306
+        expose:
+            - 3306
+        volumes:
+            - ./mariadb:/var/lib/mysql/
+    phpmyadmin:
+        image: phpmyadmin:latest
+        depends_on:
+            - mariadb
+        ports:
+            - 8080:80
+        expose:
+            - 8080
+        environment:
+            PMA_HOSTS: mariadb
+            PMA_PORTS: 3306
+            MYSQL_ROOT_PASSWORD: 1234 
+
+volumes:
+   phypmyadmin: 
