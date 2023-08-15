@@ -9,22 +9,16 @@
 <body>
     <!-- Name bis jz unklar-->
     <div class="center">
-        <center>
+        
     <div class="header">
         <h1>Willkommen bei *Name*</h1>
         
     </div>
     <br>
     <form>
-        <p>
-        <label>
-            E-Mail:
-        </label>
-        <input type="email" id="email" placeholder="beispiel@email.com" required>
-        </p>
         <p class="a">
         <label>
-            Passwort:
+            Admin-Passwort:
         </label>
         <input type="password" id="Passwort" required>
         </p>
@@ -32,7 +26,7 @@
             Anmelden
         </button>
     </form>
-    </center>
+    
     </div>
     
     
