@@ -9,18 +9,18 @@ const isLeapYear = (year) => {
   };
   let calendar = document.querySelector('.calendar');
   const month_names = [
-    'January',
-    'February',
-    'March',
+    'Januar',
+    'Februar',
+    'März',
     'April',
-    'May',
-    'June',
-    'July',
+    'Mai',
+    'Juni',
+    'Juli',
     'August',
     'September',
-    'October',
+    'Oktober',
     'November',
-    'December',
+    'Dezember',
   ];
   let month_picker = document.querySelector('#month-picker');
   const dayTextFormate = document.querySelector('.day-text-formate');
