@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anmeldung *Name*</title>
     <link rel="stylesheet" href="login.css">
+    
 </head>
 <body>
     <!-- Name bis jz unklar-->
-    <div class="center">
+    
         
     <div class="header">
         <h1>Willkommen bei *Name*</h1>
         
     </div>
     <br>
+    <div class="center">
     <form>
         <p class="a">
         <label>

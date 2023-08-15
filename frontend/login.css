@@ -5,10 +5,15 @@ html{
 body{
     margin: 0;
 }
+.center{
+    display: flex;
+    justify-content: center;
+}
 .header{
     padding: 1px;
     background-color: white;
     color: #005d56;
+    text-align: center;
 }
 .header h1{
     padding-left: 20px;
