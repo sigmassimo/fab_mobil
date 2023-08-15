@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmeldung *Name*</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Name bis jz unklar-->
+    <div class="center">
+        
+    <div class="header">
+        <h1>Willkommen bei *Name*</h1>
+        
+    </div>
+    <br>
+    <form>
+        <p class="a">
+        <label>
+            Admin-Passwort:
+        </label>
+        <input type="password" id="Passwort" required>
+        </p>
+        <button>
+            Anmelden
+        </button>
+    </form>
+    
+    </div>
+    
+    
+</body>
+</html>
