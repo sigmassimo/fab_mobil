@@ -38,52 +38,55 @@ const isLeapYear = (year) => {
     dateFormate.classList.remove('showtime');
     dateFormate.classList.add('hideTime');
   };
+
+  //Pop up für Einbuchung noch machen 
+
+
   
-  const generateCalendar = (month, year) => {
+  function generateCalendar(month, year) {
     let calendar_days = document.querySelector('.calendar-days');
     calendar_days.innerHTML = '';
     let calendar_header_year = document.querySelector('#year');
     let days_of_month = [
-      31,
-      getFebDays(year),
-      31,
-      30,
-      31,
-      30,
-      31,
-      31,
-      30,
-      31,
-      30,
-      31,
+        31,
+        getFebDays(year),
+        31,
+        30,
+        31,
+        30,
+        31,
+        31,
+        30,
+        31,
+        30,
+        31,
     ];
-    
-    let currentDate = new Date();
-    
-    month_picker.innerHTML = month_names[month];
-    
-    calendar_header_year.innerHTML = year;
-    
-    let first_day = new Date(year, month);
-  
-  
-  for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
-  
-      let day = document.createElement('div');
-  
-      if (i >= first_day.getDay()) {
-        day.innerHTML = i - first_day.getDay() + 1;
 
-        if (i - first_day.getDay() + 1 === currentDate.getDate() &&
-          year === currentDate.getFullYear() &&
-          month === currentDate.getMonth()
-        ) {
-          day.classList.add('current-date');
+    let currentDate = new Date();
+
+    month_picker.innerHTML = month_names[month];
+
+    calendar_header_year.innerHTML = year;
+
+    let first_day = new Date(year, month);
+
+
+    for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
+
+        let day = document.createElement('div');
+
+        if (i >= first_day.getDay()) {
+            day.innerHTML = i - first_day.getDay() + 1;
+
+            if (i - first_day.getDay() + 1 === currentDate.getDate() &&
+                year === currentDate.getFullYear() &&
+                month === currentDate.getMonth()) {
+                day.classList.add('current-date');
+            }
         }
-      }
-      calendar_days.appendChild(day);
+        calendar_days.appendChild(day);
     }
-  };
+}
   
   let month_list = calendar.querySelector('.month-list');
   month_names.forEach((e, index) => {
