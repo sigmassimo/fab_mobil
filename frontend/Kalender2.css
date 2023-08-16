@@ -21,7 +21,7 @@
     place-items: center;
     font-family: var(--font-family);
     background:linear-gradient(to right, #006d56, #fbc7d4);
-    overflow: hidden;
+    overflow: scroll;
   }
   .contianer {
     width: max-content;
