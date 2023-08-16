@@ -1,0 +1,21 @@
+header {
+    background-color: #b5d334;
+}
+a:link{
+    color: #a9112c
+}
+a{
+    letter-spacing:1px
+}
+a{
+    font-size: 25px
+}
+a:link{
+    text-decoration: none;
+}
+a:hover{
+    color: #ed1b34
+}
+.center{
+    align-items: center;
+}

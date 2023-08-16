@@ -9,6 +9,10 @@ services:
             MYSQL_PASSWORD: Sommer2023
         volumes:
             - ../Docker/mariadb:/var/lib/mysql/
+        ports:
+            - 3306:3306
+        expose:
+            - 3306
     phpmyadmin:
         image: phpmyadmin:latest
         depends_on:
