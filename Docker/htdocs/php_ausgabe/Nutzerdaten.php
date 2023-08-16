@@ -18,17 +18,19 @@ $sql = "SELECT * FROM `Nutzerdaten`";
 $result = $conn->query($sql);
 
 
+$rows = [];
+
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    //echo "user_id: " . $row["user_id"]."firstname: " . $row["firstname"]."lastname: " . $row["lastname"]."passwort: " . $row["passwort"]."email: " . $row["email"]"user_id: " . $row["user_id"]."user_id: " . $row["user_id"].;
-  
-    echo json_encode($row);
-}
+
+    $rows[] = $row;
+  }
+
+  echo json_encode($rows);
 } else {
   echo "0 results";
 }
-
 $conn->close();
 
 ?>

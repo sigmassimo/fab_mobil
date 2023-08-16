@@ -17,19 +17,19 @@ echo "Connected successfully";
 $sql = "SELECT * FROM `Veranstaltungen`";
 $result = $conn->query($sql);
 
+$rows = [];
 
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    //echo "veranstaltungs_id: " . $row["veranstaltungs_id"]."datum: " . $row["datum"]."ort: " . $row["ort"]."start_zeit: " . $row["start_zeit"]."workshop_id: " . $row["workshop_id"]."spezialisierung: " . $row["spezialisierung"];
-  
-    echo json_encode($row);
+
+    $rows[] = $row;
   }
+
+  echo json_encode($rows);
 } else {
   echo "0 results";
 }
-
-
 $conn->close();
 
 ?>
