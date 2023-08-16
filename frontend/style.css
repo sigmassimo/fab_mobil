@@ -345,6 +345,20 @@
     color: var(--primary-clr);
     font-size: 0.5rem;
   }
+  #loeschen {
+    width: 70px;
+    height: 20px;
+    float:right;
+    margin-right: 10px;
+    background-color:#3f4458;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    text-align: center;
+
+    
+    
+  }
   .events .event:hover i {
     color: #fff;
   }
