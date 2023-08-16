@@ -1,5 +1,11 @@
 version: '3.1'
 services:
+    php_api:
+        build: ../Docker
+        volumes:
+            - ../Docker/htdocs:/var/www/html/
+        depends_on:
+            - mariadb
     mariadb:
         image: mariadb:10.5
         environment:
@@ -12,6 +18,7 @@ services:
         ports:
             - 3306:3306
         expose:
+            # Für DEV, muss später entfernt werden!
             - 3306
     phpmyadmin:
         image: phpmyadmin:latest
@@ -37,5 +44,6 @@ services:
         depends_on:
             - web
             - phpmyadmin
+            - php_api
 volumes:
     phypmyadmin:
