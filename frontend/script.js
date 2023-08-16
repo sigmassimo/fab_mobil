@@ -1,6 +1,7 @@
 const calendar = document.querySelector(".calendar"),
   date = document.querySelector(".date"),
   daysContainer = document.querySelector(".days"),
+  weeksContainer = document.querySelector(".weeks"),
   prev = document.querySelector(".prev"),
   next = document.querySelector(".next"),
   todayBtn = document.querySelector(".today-btn"),
@@ -56,9 +57,16 @@ function initCalendar() {
   date.innerHTML = months[month] + " " + year;
 
   let days = "";
+  let weeks = "";
 
   for (let x = day; x > 0; x--) {
-    days += `<div class="day prev-date">${prevDays - x + 1}</div>`;
+    let prevDay = prevDays - x + 1;
+    let aaa = new Date(year, month-1, prevDay);
+    days += `<div class="day prev-date">${prevDay}</div>`;
+    //will hier Woche einfügen
+    if (aaa.getDay()==1){
+      weeks += `<div class="week">${calcWeek(year, month - 1, prevDay)+1}</div>`;
+    }
   }
 
   for (let i = 1; i <= lastDate; i++) {
@@ -93,13 +101,34 @@ function initCalendar() {
         days += `<div class="day ">${i}</div>`;
       }
     }
+    //will hier Woche einfügen
+    let bbb = new Date(year, month, i);
+    if(bbb.getDay()==1){
+      weeks += `<div class="week">${calcWeek(year, month, i)+1}</div>`;
+    }
   }
 
   for (let j = 1; j <= nextDays; j++) {
     days += `<div class="day next-date">${j}</div>`;
+    let ccc = new Date(year, month+1, j);
+    if (ccc.getDay()==1) {
+      weeks += `<div class="week">${calcWeek(year, month + 1, j)+1}</div>`;
+    }
   }
   daysContainer.innerHTML = days;
+  weeksContainer.innerHTML = weeks;
   addListner();
+}
+
+//function to calculate current calendar week
+function calcWeek(y, m, d) {
+  currentDate = new Date(y, m, d);
+  startDate = new Date(currentDate.getFullYear(), 0, 1);
+  var days = Math.floor((currentDate - startDate) /
+    (24 * 60 * 60 * 1000));
+ 
+  var weekNumber = Math.ceil(days / 7);
+  return weekNumber;
 }
 
 //function to add month and year on prev and next button
@@ -402,10 +431,11 @@ addEventSubmit.addEventListener("click", () => {
   }
 });
 
+
 //function to delete event when clicked on event
-eventsContainer.addEventListener("click", (e) => {
+document.getElementById("loeschen").addEventListener("click", (e) => {
   if (e.target.classList.contains("event")) {
-    if (confirm("Are you sure you want to delete this event?")) {
+    if (confirm("Sicher, dass Sie dieses Event löschen wollen?")) {
       const eventTitle = e.target.children[0].children[1].innerHTML;
       eventsArr.forEach((event) => {
         if (
