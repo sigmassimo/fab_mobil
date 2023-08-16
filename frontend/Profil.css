@@ -4,6 +4,12 @@ header {
 a:link{
     color: #a9112c
 }
+a:visited{
+    color: #a9112c;
+}
+a:active{
+    color: #a9112c;
+}
 a{
     letter-spacing:1px
 }
@@ -15,23 +21,4 @@ a:link{
 }
 a:hover{
     color: #ed1b34
-}
-.div2{
-    float: left;
-    width: 20%
-}
-img.logo{
-    float: left;
-}
-.div3{
-    float: left;
-    width: 60%;
-}
-.div4{
-    float: right;
-    width: 20%;
-}
-img.profil{
-    position: relative;
-    right: 100%;
 }
