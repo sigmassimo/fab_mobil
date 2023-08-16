@@ -41,7 +41,7 @@
     background-color: white;
     border-radius: 22px;
     overflow: hidden;
-    padding: 30px 50px 0px 50px;
+    padding: 30px 50px 0px 30px;
   }
   .calendar {
     box-shadow: var(--shadow);
