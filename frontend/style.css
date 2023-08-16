@@ -106,14 +106,41 @@
     text-transform: capitalize;
   }
   .weekdays div {
-    width: 14.28%;
+    width: 12.5%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .calendar .days {
+  .calendar .daysandweeks{
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .calendar .weeks{
+    width: 12.5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+  .calendar .week {
+    width: 100%;
+    margin-left: 75%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--primary-clr);
+    border: 1px solid #f5f5f5;
+  }
+  .calendar .days {
+    width: 87.5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
