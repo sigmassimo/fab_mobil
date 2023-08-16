@@ -402,8 +402,9 @@ addEventSubmit.addEventListener("click", () => {
   }
 });
 
+
 //function to delete event when clicked on event
-eventsContainer.addEventListener("click", (e) => {
+document.getElementById("loeschen").addEventListener("click", (e) => {
   if (e.target.classList.contains("event")) {
     if (confirm("Sicher, dass Sie dieses Event löschen wollen?")) {
       const eventTitle = e.target.children[0].children[1].innerHTML;
