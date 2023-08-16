@@ -1,14 +1,21 @@
 header {
     background-color: #b5d334;
+    height: 70px;
 }
 a:link{
     color: #a9112c
+}
+a:visited{
+    color: #a9112c;
+}
+a:active{
+    color: #a9112c;
 }
 a{
     letter-spacing:1px
 }
 a{
-    font-size: 25px
+    font-size: 100%
 }
 a:link{
     text-decoration: none;
@@ -16,22 +23,22 @@ a:link{
 a:hover{
     color: #ed1b34
 }
-.div2{
+.links{
     float: left;
-    width: 20%
+    width: 23%;
 }
-img.logo{
+.kalender{
     float: left;
+    width: 23%;
 }
-.div3{
+.kontakte{
     float: left;
-    width: 60%;
+    width: 23%;
 }
-.div4{
+.name{
+    float: left;
+    width: 23%;;
+}
+.rechts{
     float: right;
-    width: 20%;
-}
-img.profil{
-    position: relative;
-    right: 100%;
 }

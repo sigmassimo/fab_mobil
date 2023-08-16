@@ -3,32 +3,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil</title>
-    <link rel="stylesheet" href="Profil.css"
+    <link rel="stylesheet" href="Profil.css">
 </head>
 <header>
-    <div1>
-        <div2>
-    <img id="logo" src="Fabmobil-Logo-300x300.jpg">
-    </div2>
+    <div>
+        <div class="links">
+        <img src="Fabmobil-Logo-300x300.jpg" width="70px" height="70px">
+        </div>
     <!-- Dateinamen sind nur erstmal Platzhalter, kann man noch ändern-->
 
-    <div3>
-    <a href="Kalender.html">
+    <div class="kalender">
+      <a href="Kalender.html">
          Kalender  
     </a>
-    <a href="Kontakte.html">
+    </div>
+    <div class="kontakte">
+     <a href="Kontakte.html">
         Kontakte
     </a>
+     </div>
     
-    <a href="Profil.html">
+     <div class="name">
+     <a href="Profil.html">
         Name
-        
     </a>
-    </div3>
-    <div4>
-    <img id="profil" src="Profilbild.jpg">
-    </div4>
-    </div1>
+    </div>
+        <div class="rechts">
+     <img src="Profilbild.jpg" width="70px" height="70px" align="right">
+        </div>
+    </div>
 </header>
 
 <body style="font-family: Arial;">
@@ -39,7 +42,7 @@
         </tr>
     </table>
     <br><br>
-    <table border="black"  style="width: 100%">
+    <table style="width: 100%"border= black">
         <tr>
             <th style="width: 30%">Anrede</th>
             <td>xxx</td>
@@ -74,7 +77,8 @@
         </tr>
         
     </table>
-    <button onclick="Profil bearbeiten.html">
+    <br>
+    <button onclick="Profil_bearbeiten.html">
         Bearbeiten
     </button>
 </body>
