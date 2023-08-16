@@ -1,0 +1,191 @@
+const mysql = require("mysql2");
+
+
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "SommerCamp",
+    password: "Sommer2023",
+    database: "SommerCamp"
+  });
+  
+  connection.connect((err) => {
+    if (err) {
+      console.error('Fehler bei der Verbindung zur Datenbank: ', err);
+      return;
+    }
+    console.log('Verbindung zur Datenbank hergestellt.');
+
+    connection.end();
+  });
+
+
+function loadUserList(){
+    connection.query('SELECT user FROM user_data_table', (err, results) => {
+        if (err) {
+          console.error('Fehler beim Abrufen der Daten: ', err);
+          return;
+        };
+
+    });
+
+    const columnData = results.map(row => row.deine_spalte);
+
+    for (i = 0; i < columnData.length - 1; i++){
+        //create table elements for every user in the list
+        let box_tr = document.createElement("tr");
+        let box_td_1 = document.createElement("td");
+        let box_td_2 = document.createElement("td");
+        let box_td_2_button = createElement("button");
+        let box_td_3 = document.createElement("td");
+        let box_td_3_button = document.createElement("button");
+
+        //fill up boxes with dynamic data from for loop from db
+        box_td_1.innerHTML = username_list[i];
+        box_td_2_button.innerHTML = "Bearbeiten";
+        box_td_2.appendChild(box_td_2_button);
+        box_td_3_button.innerHTML = "Löschen";
+        box_td_3.appendChild(box_td_3_button);
+
+        //set boxes id to recognize the id, to start the right function
+        box_tr.setAttribute("id", i);
+        box_td_1.setAttribute("id", "cell_1_user_" + i);
+        box_td_2.setAttribute("id", "cell_2_user_" + i);
+        box_td_2_button.setAttribute("id", "editButton" + i);
+        box_td_3.setAttribute("id", "cell_3_user_" + i);
+        box_td_3_button.setAttribute("id", "deleteButton" + i); 
+
+        //set classes for css team to style the table 
+        box_td_1.setAttribute("class", "cell_1_user");
+        box_td_2.setAttribute("class", "cell_2_user");
+        box_td_3.setAttribute("class", "cell_3_user");
+        box_tr.setAttribute("class", "tableRow_user");
+
+        //add finished table row
+        let table = document.getElementById("table");
+        table.insertRow(box_tr, -1);
+
+        //add finished table cells to the table row that was added to the whole table
+        if (tableRowChecker !== 0){ 
+            table.insertCell(box_td_1);
+            table.insertCell(box_td_2);
+            table.insertCell(box_td_3);
+
+            let tableRowChecker = 1;
+            return tableRowChecker;
+        };
+        return tableRowChecker;
+    };
+};
+
+
+loadUserList();
+
+
+function deleteUser(){
+    connection.query('SELECT user FROM user_data_table', (err, results) => {
+        if (err) {
+          console.error('Fehler beim Abrufen der Daten: ', err);
+          return;
+        };
+
+    });
+
+    const username_list = results.map(row => row.deine_spalte);
+
+    if (username in username_list){
+        const td_elements = document.getElementsByTagName("td");
+        const buttons = document.getElementsByTagName("button");
+        const buttonPressed = e => {
+            let deleteButton = document.getElementById(e.target.id);
+            let deleteButtonText = document.getElementById(e.target.id).innerHTML;
+
+            let lastDigit = deleteButtonText.charAt(deleteButtonText.length - 1);
+            let selectedUser = document.getElementById("cell_1_user_" + lastDigit);
+
+            return deleteButton, selectedUser
+        };
+
+        for (let button of buttons){
+            button.addEventListener("click", buttonPressed);
+        };
+
+
+        const query = 'SELECT * FROM your_table WHERE unique_column = ?';
+        connection.query(query, [selectedUser], (error, results) => {
+            if (error) {
+                console.error('Error:', error);
+                return;
+            };
+            if (results.length > 0){
+                let selectedRow = results[0];
+                return selectedRow;
+
+        }});
+        
+        let rowToDeleteId = selectedRow;
+
+        connection.query('DELETE FROM deine_tabelle WHERE id = ?', [rowToDeleteId], (err, result) => {
+            if (err) {
+            console.error('Fehler beim Löschen der Zeile: ', err);
+            return;
+            }})
+        
+        document.getElementById(selectedRow).remove();
+        console.log(selectedUser + " was deleted!");
+        console.log(username + "`s box was deleted from the username list!");
+
+    } else {
+        console.log(username + "doesn` exist in the user database! Maybe the user ist deleted aleady.");
+        return;
+}};
+
+
+function editUser(){
+
+    const td_elements = document.getElementsByTagName("td");
+    const buttons = document.getElementsByTagName("button");
+    const buttonPressed = e => {
+        let editButton = document.getElementById(e.target.id);
+        let deleteButtonText = document.getElementById(e.target.id).innerHTML;
+
+        let lastDigit = deleteButtonText.charAt(deleteButtonText.length - 1);
+        let selectedUser = document.getElementById("cell_1_user_" + lastDigit);
+        let selectedUser_Name = selectedUser.innerHTML;
+
+        return editButton, selectedUser, selectedUser_Name
+    };
+
+    for (let button of buttons){
+        button.addEventListener("click", buttonPressed);
+    };
+
+    //get all the data from the user and put it on the html page, so that the admin can edit the profile
+    const uniqueString_Name_User = selectedUser_Name;
+    
+    const query = 'SELECT * FROM your_table WHERE unique_column = ?';
+    connection.query(query, [uniqueString], (error, results, fields) => {
+        if (error) {
+          console.error('Error:', error);
+          return;
+        };
+
+        if (results.length > 0) {
+            const selectedRow = results[0];
+            return selectedRow;          
+        } else {
+            return;
+    }});
+
+    //get the data from the created bject from the db and put it inside some variables
+    let user_id = selectedRow(id);
+    let user_name = selectedRow(name);
+    let user_age = selectedRow(age);
+    let user_job = selectedRow(job);
+    let user_email = selectedRow(email);
+    let user_tel = selectedRow(telephone);
+    let user_salutation = selectedRow(salutation);
+    let user_company = selectedRow(company);
+
+};
+
+connection.end();
