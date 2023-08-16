@@ -1,0 +1,37 @@
+version: '3.1'
+services:
+    mariadb:
+        image: mariadb:10.5
+        environment:
+            MYSQL_ROOT_PASSWORD: 1234
+            MYSQL_DATABASE: SommerCamp
+            MYSQL_USER: SommerCamp
+            MYSQL_PASSWORD: Sommer2023
+        volumes:
+            - ../Docker/mariadb:/var/lib/mysql/
+    phpmyadmin:
+        image: phpmyadmin:latest
+        depends_on:
+            - mariadb
+        environment:
+            PMA_HOSTS: mariadb
+            PMA_PORTS: 3306
+            MYSQL_ROOT_PASSWORD: 1234
+            PMA_ABSOLUTE_URI: /phpmyadmin/
+    web:
+        image: httpd
+        volumes:
+            - "../frontend:/usr/local/apache2/htdocs/"
+    proxy:
+        image: nginx
+        ports:
+            - 80:80
+        expose:
+            - 80
+        volumes:
+            - "./nginx.conf:/etc/nginx/nginx.conf"
+        depends_on:
+            - web
+            - phpmyadmin
+volumes:
+    phypmyadmin:
