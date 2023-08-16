@@ -1,8 +1,5 @@
 const mysql = require("mysql2");
 
-import {username} from "./login.js";
-import {user_role} from "./login.js";
-
 
 const connection = mysql.createConnection({
     host: "localhost",
@@ -145,18 +142,41 @@ function editUser(){
 
         let lastDigit = deleteButtonText.charAt(deleteButtonText.length - 1);
         let selectedUser = document.getElementById("cell_1_user_" + lastDigit);
+        let selectedUser_Name = selectedUser.innerHTML;
 
-        return editButton, selectedUser
+        return editButton, selectedUser, selectedUser_Name
     };
 
     for (let button of buttons){
         button.addEventListener("click", buttonPressed);
     };
 
+    //get all the data from the user and put it on the html page, so that the admin can edit the profile
+    const uniqueString_Name_User = selectedUser_Name;
+    
+    const query = 'SELECT * FROM your_table WHERE unique_column = ?';
+    connection.query(query, [uniqueString], (error, results, fields) => {
+        if (error) {
+          console.error('Error:', error);
+          return;
+        };
 
+        if (results.length > 0) {
+            const selectedRow = results[0];
+            return selectedRow;          
+        } else {
+            return;
+    }});
 
-
-
+    //get the data from the created bject from the db and put it inside some variables
+    let user_id = selectedRow(id);
+    let user_name = selectedRow(name);
+    let user_age = selectedRow(age);
+    let user_job = selectedRow(job);
+    let user_email = selectedRow(email);
+    let user_tel = selectedRow(telephone);
+    let user_salutation = selectedRow(salutation);
+    let user_company = selectedRow(company);
 
 };
 
