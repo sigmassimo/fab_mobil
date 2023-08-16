@@ -147,7 +147,7 @@
   
   .calendar .days .day:not(.prev-date, .next-date):hover {
     color: #fff;
-    background-color: var(--primary-clr);
+    background-color: #02887d;
   }
   .calendar .days .prev-date,
   .calendar .days .next-date {
@@ -156,7 +156,7 @@
   .calendar .days .active {
     position: relative;
     font-size: 2rem;
-    color: #fff;
+    color: white;
     background-color: var(--primary-clr);
   }
   .calendar .days .active::before {
@@ -166,13 +166,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    box-shadow: 0 0 10px 2px var(--primary-clr);
+   
   }
   .calendar .days .today {
     font-size: 2rem;
   }
   .calendar .days .event {
     position: relative;
+    color: #fff;
+    box-shadow: none;
+    background-color: #a9112c;
   }
   .calendar .days .event::after {
     content: "";
@@ -183,7 +186,7 @@
     height: 6px;
     border-radius: 30px;
     transform: translateX(-50%);
-    background-color: var(--primary-clr);
+    background-color: #fff;
   }
   .calendar .days .day:hover.event::after {
     background-color: #fff;
