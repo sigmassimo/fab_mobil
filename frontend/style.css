@@ -1,5 +1,5 @@
 :root {
-    --primary-clr: #b38add;
+    --primary-clr: #005d56;
   }
   * {
     margin: 0;
@@ -440,7 +440,7 @@
     padding: 0 10px;
     font-size: 1rem;
     font-weight: 400;
-    color: #373c4f;
+    color: #005d56;
   }
   .add-event-body .add-event-input input::placeholder {
     color: #a5a5a5;
@@ -546,7 +546,7 @@
     padding: 10px;
     font-size: 12px;
     color: #fff;
-    background-color: #b38add;
+    background-color: #005d56;
   }
   .credits a {
     color: #fff;

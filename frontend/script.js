@@ -23,18 +23,18 @@ let month = today.getMonth();
 let year = today.getFullYear();
 
 const months = [
-  "January",
-  "February",
-  "March",
+  "Januar",
+  "Februar",
+  "März",
   "April",
-  "May",
-  "June",
-  "July",
+  "Mai",
+  "Juni",
+  "Juli",
   "August",
   "September",
-  "October",
+  "Oktober",
   "November",
-  "December",
+  "Dezember",
 ];
 
 // const eventsArr = [
