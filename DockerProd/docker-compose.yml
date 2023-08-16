@@ -15,6 +15,7 @@ services:
             MYSQL_PASSWORD: Sommer2023
         volumes:
             - ../Docker/mariadb:/var/lib/mysql/
+            - ../Docker/DB.sql:/docker-entrypoint-initdb.d/dump.sql
         ports:
             - 3306:3306
         expose:

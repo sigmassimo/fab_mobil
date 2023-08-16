@@ -4,8 +4,8 @@ const mysql = require("mysql2");
 const connection = mysql.createConnection({
     host: "localhost",
     user: "SommerCamp",
-    password: "",
-    database: ""
+    password: "Sommer2023",
+    database: "SommerCamp"
   });
   
   connection.connect((err) => {
@@ -82,54 +82,62 @@ loadUserList();
 
 
 function deleteUser(){
-    //
-    //check if User (username) still exists in db 
-    //
-
-    const td_elements = document.getElementsByTagName("td");
-
-    const buttons = document.getElementsByTagName("button");
-    const buttonPressed = e => {
-        let deleteButton = document.getElementById(e.target.id);
-        let deleteButtonText = document.getElementById(e.target.id).innerHTML;
-
-        let lastDigit = deleteButtonText.charAt(deleteButtonText.length - 1);
-        let selectedUser = document.getElementById("cell_1_user_" + lastDigit);
-
-        return deleteButton, selectedUser
-    };
-
-    for (let button of buttons){
-        button.addEventListener("click", buttonPressed);
-    };
-
-
-    const query = 'SELECT * FROM your_table WHERE unique_column = ?';
-    connection.query(query, [selectedUser], (error, results) => {
-        if (error) {
-            console.error('Error:', error);
-            return;
-        };
-        if (results.length > 0){
-            let selectedRow = results[0];
-            return selectedRow;
-
-    }});
-    
-    let rowToDeleteId = selectedRow;
-
-    connection.query('DELETE FROM deine_tabelle WHERE id = ?', [rowToDeleteId], (err, result) => {
+    connection.query('SELECT user FROM user_data_table', (err, results) => {
         if (err) {
-          console.error('Fehler beim Löschen der Zeile: ', err);
+          console.error('Fehler beim Abrufen der Daten: ', err);
           return;
-    }});
+        };
 
-    document.getElementById(selectedRow).remove();
-    console.log(selectedUser + " was deleted!");
-    console.log(username + "´s box was deleted from the username list!");
+    });
+
+    const username_list = results.map(row => row.deine_spalte);
+
+    if (username in username_list){
+        const td_elements = document.getElementsByTagName("td");
+        const buttons = document.getElementsByTagName("button");
+        const buttonPressed = e => {
+            let deleteButton = document.getElementById(e.target.id);
+            let deleteButtonText = document.getElementById(e.target.id).innerHTML;
+
+            let lastDigit = deleteButtonText.charAt(deleteButtonText.length - 1);
+            let selectedUser = document.getElementById("cell_1_user_" + lastDigit);
+
+            return deleteButton, selectedUser
+        };
+
+        for (let button of buttons){
+            button.addEventListener("click", buttonPressed);
+        };
 
 
-};
+        const query = 'SELECT * FROM your_table WHERE unique_column = ?';
+        connection.query(query, [selectedUser], (error, results) => {
+            if (error) {
+                console.error('Error:', error);
+                return;
+            };
+            if (results.length > 0){
+                let selectedRow = results[0];
+                return selectedRow;
+
+        }});
+        
+        let rowToDeleteId = selectedRow;
+
+        connection.query('DELETE FROM deine_tabelle WHERE id = ?', [rowToDeleteId], (err, result) => {
+            if (err) {
+            console.error('Fehler beim Löschen der Zeile: ', err);
+            return;
+            }})
+        
+        document.getElementById(selectedRow).remove();
+        console.log(selectedUser + " was deleted!");
+        console.log(username + "`s box was deleted from the username list!");
+
+    } else {
+        console.log(username + "doesn` exist in the user database! Maybe the user ist deleted aleady.");
+        return;
+}};
 
 
 function editUser(){

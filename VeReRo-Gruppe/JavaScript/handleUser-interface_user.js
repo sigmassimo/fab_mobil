@@ -6,8 +6,8 @@ import {entity_role} from "login_interface.js";
 const connection = mysql.createConnection({
     host: "localhost",
     user: "SommerCamp",
-    password: "",
-    database: ""
+    password: "Sommer2023",
+    database: "SommerCamp"
   });
 
 
