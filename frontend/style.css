@@ -318,6 +318,10 @@
     color: var(--primary-clr);
     font-size: 0.5rem;
   }
+  #loeschen {
+    width: 70px;
+    height: 20px;
+  }
   .events .event:hover i {
     color: #fff;
   }
