@@ -537,6 +537,7 @@
     }
   }
   
+<<<<<<< HEAD
   .credits {
     position: absolute;
     bottom: 0;
@@ -556,3 +557,6 @@
   .credits a:hover {
     text-decoration: underline;
   }
+=======
+  
+>>>>>>> ccc818b4edc63d7a783088dbee58ea992d8878e4
