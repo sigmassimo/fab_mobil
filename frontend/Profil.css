@@ -16,6 +16,22 @@ a:link{
 a:hover{
     color: #ed1b34
 }
-.center{
-    align-items: center;
+.div2{
+    float: left;
+    width: 20%
+}
+img.logo{
+    float: left;
+}
+.div3{
+    float: left;
+    width: 60%;
+}
+.div4{
+    float: right;
+    width: 20%;
+}
+img.profil{
+    position: relative;
+    right: 100%;
 }
