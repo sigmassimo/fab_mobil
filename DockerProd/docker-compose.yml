@@ -9,8 +9,6 @@ services:
             MYSQL_PASSWORD: Sommer2023
         ports:
             - 3306:3306
-        expose:
-            - 3306
         volumes:
             - ../Docker/mariadb:/var/lib/mysql/
     phpmyadmin:
@@ -19,8 +17,6 @@ services:
             - mariadb
         ports:
             - 8080:80
-        expose:
-            - 8080
         environment:
             PMA_HOSTS: mariadb
             PMA_PORTS: 3306
@@ -30,8 +26,6 @@ services:
         image: httpd
         ports:
             - 8082:80
-        expose:
-            - 8082
         volumes:
             - "../frontend:/usr/local/apache2/htdocs/"
     proxy:
