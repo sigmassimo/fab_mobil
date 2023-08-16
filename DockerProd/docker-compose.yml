@@ -1,5 +1,11 @@
 version: '3.1'
 services:
+    php_api:
+        build: ../Docker
+        volumes:
+            - ../Docker/htdocs:/var/www/html/
+        depends_on:
+            - mariadb
     mariadb:
         image: mariadb:10.5
         environment:
@@ -9,6 +15,12 @@ services:
             MYSQL_PASSWORD: Sommer2023
         volumes:
             - ../Docker/mariadb:/var/lib/mysql/
+            - ../Docker/DB.sql:/docker-entrypoint-initdb.d/dump.sql
+        ports:
+            - 3306:3306
+        expose:
+            # Für DEV, muss später entfernt werden!
+            - 3306
     phpmyadmin:
         image: phpmyadmin:latest
         depends_on:
@@ -33,5 +45,6 @@ services:
         depends_on:
             - web
             - phpmyadmin
+            - php_api
 volumes:
     phypmyadmin:

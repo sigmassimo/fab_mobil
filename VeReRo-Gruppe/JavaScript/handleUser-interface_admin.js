@@ -1,14 +1,11 @@
 const mysql = require("mysql2");
 
-import {username} from "./login.js";
-import {user_role} from "./login.js";
-
 
 const connection = mysql.createConnection({
     host: "localhost",
-    user: "root",
-    password: "",
-    database: ""
+    user: "SommerCamp",
+    password: "Sommer2023",
+    database: "SommerCamp"
   });
   
   connection.connect((err) => {
@@ -85,54 +82,62 @@ loadUserList();
 
 
 function deleteUser(){
-    //
-    //check if User (username) still exists in db 
-    //
-
-    const td_elements = document.getElementsByTagName("td");
-
-    const buttons = document.getElementsByTagName("button");
-    const buttonPressed = e => {
-        let deleteButton = document.getElementById(e.target.id);
-        let deleteButtonText = document.getElementById(e.target.id).innerHTML;
-
-        let lastDigit = deleteButtonText.charAt(deleteButtonText.length - 1);
-        let selectedUser = document.getElementById("cell_1_user_" + lastDigit);
-
-        return deleteButton, selectedUser
-    };
-
-    for (let button of buttons){
-        button.addEventListener("click", buttonPressed);
-    };
-
-
-    const query = 'SELECT * FROM your_table WHERE unique_column = ?';
-    connection.query(query, [selectedUser], (error, results) => {
-        if (error) {
-            console.error('Error:', error);
-            return;
-        };
-        if (results.length > 0){
-            let selectedRow = results[0];
-            return selectedRow;
-
-    }});
-    
-    let rowToDeleteId = selectedRow;
-
-    connection.query('DELETE FROM deine_tabelle WHERE id = ?', [rowToDeleteId], (err, result) => {
+    connection.query('SELECT user FROM user_data_table', (err, results) => {
         if (err) {
-          console.error('Fehler beim Löschen der Zeile: ', err);
+          console.error('Fehler beim Abrufen der Daten: ', err);
           return;
-    }});
+        };
 
-    document.getElementById(selectedRow).remove();
-    console.log(selectedUser + " was deleted!");
-    console.log(username + "´s box was deleted from the username list!");
+    });
+
+    const username_list = results.map(row => row.deine_spalte);
+
+    if (username in username_list){
+        const td_elements = document.getElementsByTagName("td");
+        const buttons = document.getElementsByTagName("button");
+        const buttonPressed = e => {
+            let deleteButton = document.getElementById(e.target.id);
+            let deleteButtonText = document.getElementById(e.target.id).innerHTML;
+
+            let lastDigit = deleteButtonText.charAt(deleteButtonText.length - 1);
+            let selectedUser = document.getElementById("cell_1_user_" + lastDigit);
+
+            return deleteButton, selectedUser
+        };
+
+        for (let button of buttons){
+            button.addEventListener("click", buttonPressed);
+        };
 
 
-};
+        const query = 'SELECT * FROM your_table WHERE unique_column = ?';
+        connection.query(query, [selectedUser], (error, results) => {
+            if (error) {
+                console.error('Error:', error);
+                return;
+            };
+            if (results.length > 0){
+                let selectedRow = results[0];
+                return selectedRow;
+
+        }});
+        
+        let rowToDeleteId = selectedRow;
+
+        connection.query('DELETE FROM deine_tabelle WHERE id = ?', [rowToDeleteId], (err, result) => {
+            if (err) {
+            console.error('Fehler beim Löschen der Zeile: ', err);
+            return;
+            }})
+        
+        document.getElementById(selectedRow).remove();
+        console.log(selectedUser + " was deleted!");
+        console.log(username + "`s box was deleted from the username list!");
+
+    } else {
+        console.log(username + "doesn` exist in the user database! Maybe the user ist deleted aleady.");
+        return;
+}};
 
 
 function editUser(){
@@ -145,18 +150,41 @@ function editUser(){
 
         let lastDigit = deleteButtonText.charAt(deleteButtonText.length - 1);
         let selectedUser = document.getElementById("cell_1_user_" + lastDigit);
+        let selectedUser_Name = selectedUser.innerHTML;
 
-        return editButton, selectedUser
+        return editButton, selectedUser, selectedUser_Name
     };
 
     for (let button of buttons){
         button.addEventListener("click", buttonPressed);
     };
 
+    //get all the data from the user and put it on the html page, so that the admin can edit the profile
+    const uniqueString_Name_User = selectedUser_Name;
+    
+    const query = 'SELECT * FROM your_table WHERE unique_column = ?';
+    connection.query(query, [uniqueString], (error, results, fields) => {
+        if (error) {
+          console.error('Error:', error);
+          return;
+        };
 
+        if (results.length > 0) {
+            const selectedRow = results[0];
+            return selectedRow;          
+        } else {
+            return;
+    }});
 
-
-
+    //get the data from the created bject from the db and put it inside some variables
+    let user_id = selectedRow(id);
+    let user_name = selectedRow(name);
+    let user_age = selectedRow(age);
+    let user_job = selectedRow(job);
+    let user_email = selectedRow(email);
+    let user_tel = selectedRow(telephone);
+    let user_salutation = selectedRow(salutation);
+    let user_company = selectedRow(company);
 
 };
 
