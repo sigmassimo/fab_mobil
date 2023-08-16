@@ -2,13 +2,13 @@ import * as JsHashes from "jshashes";
 
 
 function openToolWindow(){
-    window.open("main_page.html");
+    window.open(""); //main Tool page opens to work with the tool
 }
 
 
 function userLogin(){
-    let username_input_txt = document.getElementById("username_input");
-    let password_input_txt = document.getElementById("password_input"); 
+    let username_input_txt = document.getElementById("username_input").value;
+    let password_input_txt = document.getElementById("password_input").value; 
     
     let username_input = document.getElementById("username_input");
     let password_input = document.getElementById("password_input");
