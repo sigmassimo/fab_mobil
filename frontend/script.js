@@ -23,18 +23,18 @@ let month = today.getMonth();
 let year = today.getFullYear();
 
 const months = [
-  "January",
-  "February",
-  "March",
+  "Januar",
+  "Februar",
+  "März",
   "April",
-  "May",
-  "June",
-  "July",
+  "Mai",
+  "Juni",
+  "Juli",
   "August",
   "September",
-  "October",
+  "Oktober",
   "November",
-  "December",
+  "Dezember",
 ];
 
 
@@ -245,7 +245,7 @@ function updateEvents(date) {
   });
   if (events === "") {
     events = `<div class="no-event">
-            <h3>No Events</h3>
+            <h3>Keine Events an diesem Tag</h3>
         </div>`;
   }
   eventsContainer.innerHTML = events;
