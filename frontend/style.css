@@ -39,7 +39,7 @@
     display: flex;
   
     border-radius: 10px;
-    background-color: #373c4f;
+    background-color: #005d56;
   }
   .left {
     width: 60%;
@@ -537,6 +537,7 @@
     }
   }
   
+<<<<<<< HEAD
   .credits {
     position: absolute;
     bottom: 0;
@@ -556,3 +557,6 @@
   .credits a:hover {
     text-decoration: underline;
   }
+=======
+  
+>>>>>>> 4d38211e889c60abc8b046e646bddb6d635925ad
