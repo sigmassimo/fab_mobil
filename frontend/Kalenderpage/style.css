@@ -105,6 +105,14 @@
     font-weight: 500;
     text-transform: capitalize;
   }
+  .weekdays .KW{
+    width: 12.5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20px;
+  }
   .weekdays div {
     width: 12.5%;
     height: 100%;
@@ -120,11 +128,9 @@
   .calendar .weeks{
     width: 12.5%;
     margin-left: 5%;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    
     font-size: 1rem;
     font-weight: 500;
     margin-bottom: 20px;
@@ -132,7 +138,6 @@
   }
   .calendar .week {
     width: 80%;
-
     height: 90px;
     display: flex;
     justify-content: center;
@@ -145,7 +150,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 20px;
+    padding-right: 20px;
     font-size: 1rem;
     font-weight: 500;
     margin-bottom: 20px;
