@@ -271,10 +271,7 @@ function updateEvents(date) {
             </div>
             <div class="Spezialisierung">
             <span class="event-Spezialisierung">${event.Spezialisierung}</span>
-            <div class="evebutton1">
-            <button type="button">Einschreiben</button>
-            </div>
-            <button class="loeschen"  ">Löschen</button>
+            
         </div>`;
       });
     }
