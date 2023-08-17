@@ -2,25 +2,25 @@ header {
     background-color: #b5d334;
     height: 70px;
 }
-a:link{
+.headerlink:link{
     color: #a9112c;
 }
-a:visited{
+.headerlink:visited{
     color: #a9112c;
 }
-a:active{
+.headerlink:active{
     color: #a9112c;
 }
-a{
+.headerlink{
     letter-spacing:1px
 }
-a{
+.headerlink{
     font-size: 100%
 }
-a:link{
+.headerlink:link{
     text-decoration: none;
 }
-a:hover{
+.headerlink:hover{
     color: #ed1b34
 }
 
