@@ -274,7 +274,7 @@ function updateEvents(date) {
             <div class="evebutton1">
             <button type="button">Einschreiben</button>
             </div>
-            <button class="event"  id="loeschen">Löschen</button>
+            <button class="loeschen"  ">Löschen</button>
         </div>`;
       });
     }
