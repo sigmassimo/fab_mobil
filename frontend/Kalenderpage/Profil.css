@@ -3,7 +3,7 @@ header {
     height: 70px;
 }
 a:link{
-    color: #a9112c;
+    color: #a9112c
 }
 a:visited{
     color: #a9112c;
@@ -44,7 +44,4 @@ a:hover{
     margin-top: 2%;
     float: left;
     width: 20%;
-}
-.rechts{
-    float: right;
 }
