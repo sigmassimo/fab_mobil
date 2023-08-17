@@ -115,10 +115,10 @@
   .calendar .daysandweeks{
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content:space-around ;
   }
   .calendar .weeks{
-    width: 12.5%;
+    width: 14.28%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -131,10 +131,10 @@
   .calendar .week {
     width: 100%;
     margin-left: 75%;
-    height: 30px;
+    height: 90px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     cursor: pointer;
     color: var(--primary-clr);
     border: 1px solid #f5f5f5;
@@ -436,7 +436,7 @@
     transition: max-height 0.5s ease;
   }
   .add-event-wrapper.active {
-    max-height: 300px;
+    max-height: max-content;
   }
   .add-event-header {
     width: 100%;
@@ -569,6 +569,10 @@
       height: 50px;
     }
     .calendar .days .day {
+      height: 40px;
+      font-size: 0.8rem;
+    }
+    .calendar .weeks .week{
       height: 40px;
       font-size: 0.8rem;
     }

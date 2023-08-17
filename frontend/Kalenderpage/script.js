@@ -239,7 +239,7 @@ function gotoDate() {
       return;
     }
   }
-  alert("Invalid Date");
+  alert("Invalides Datum");
 }
 
 //function get active day day name and date and update eventday eventdate
@@ -348,7 +348,7 @@ addEventSubmit.addEventListener("click", () => {
   const eventTimeFrom = addEventFrom.value;
   const eventTimeTo = addEventTo.value;
   if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
-    alert("Please fill all the fields");
+    alert("Bitte alle Felder ausfüllen");
     return;
   }
 
@@ -363,7 +363,7 @@ addEventSubmit.addEventListener("click", () => {
     timeToArr[0] > 23 ||
     timeToArr[1] > 59
   ) {
-    alert("Invalid Time Format");
+    alert("Invalides Zeitformat");
     return;
   }
 
@@ -386,7 +386,7 @@ addEventSubmit.addEventListener("click", () => {
     }
   });
   if (eventExist) {
-    alert("Event already added");
+    alert("Event schon hinzugefügt");
     return;
   }
   const newEvent = {
