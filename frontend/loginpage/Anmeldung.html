@@ -16,18 +16,18 @@
     </div>
     <br>
     <div class="center">
-    <form>
+    <form action="/api/Anmeldung.php">
         <p>
         <label>
             E-Mail:
         </label>
-        <input type="email" id="email" placeholder="beispiel@email.com" required>
+        <input type="email" id="email" name="email" placeholder="beispiel@email.com" required>
         </p>
         <p class="a">
         <label>
             Passwort:
         </label>
-        <input type="password" id="Passwort" required>
+        <input type="password" id="Passwort" name="passwort" required>
         </p>
         <form method="get" target="_blank">
             <button type="submit" onclick="userLogin()">Anmelden</button>
