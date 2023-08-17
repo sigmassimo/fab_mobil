@@ -6,6 +6,15 @@
     <title></title>
 </head>
 <body>
-    
+    <div class="container">
+    <div class="Workshopinfo">
+    </div>
+        <h1></h1>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(location.search);
+        document.querySelector("h1").innerText = `Workshop ID ${params.get("id")}`;
+    </script>
 </body>
 </html>
