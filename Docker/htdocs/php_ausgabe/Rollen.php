@@ -11,21 +11,27 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully";
+
 
 
 $sql = "SELECT * FROM `Rollen`";
 $result = $conn->query($sql);
 
 
+$rows = [];
+
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    
-    echo json_encode($row);
-}
+
+    $rows[] = $row;
+  }
+
+  echo json_encode($rows);
 } else {
   echo "0 results";
+}
+$conn->close();
 }
 
 $conn->close();
