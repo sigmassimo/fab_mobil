@@ -33,3 +33,8 @@ xhttp.onload = function() {
 // Send a request
 xhttp.open("GET", "http://localhost/api/php_ausgabe/veranstaltungen.php");
 xhttp.send();
+
+
+//first the location 
+//then the start time  
+//last but not least the specialisation 
