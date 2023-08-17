@@ -281,6 +281,7 @@
     width: 40%;
     min-height: 100%;
     padding: 20px 0;
+    
   }
   
   .right .today-date {
@@ -306,6 +307,9 @@
     font-weight: 400;
     color: #f5f5f5;
   }
+  .einrucken {
+    margin-left: 20px;
+  }
   .events {
     width: 100%;
     height: 100%;
@@ -315,6 +319,7 @@
     display: flex;
     flex-direction: column;
     padding-left: 4px;
+    
   }
   .events .event {
     position: relative;
@@ -325,15 +330,20 @@
     flex-direction: column;
     gap: 5px;
     padding: 0 20px;
-    padding-left: 50px;
+    padding-left: 0px;
     color: #fff;
     background: linear-gradient(90deg, #3f4458, transparent);
     cursor: pointer;
+    
   }
+  
+
+
   /* even event */
-  .events .event:nth-child(even) {
+  .events .event{
     background: transparent;
   }
+  
   .events .event:hover {
     background: linear-gradient(90deg, var(--primary-clr), transparent);
   }
@@ -351,20 +361,7 @@
     color: var(--primary-clr);
     font-size: 0.5rem;
   }
-  #loeschen {
-    width: 70px;
-    height: 20px;
-    float:right;
-    margin-right: 10px;
-    background-color:#3f4458;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    text-align: center;
-
-    
-    
-  }
+  
   .events .event:hover i {
     color: #fff;
   }
@@ -378,7 +375,7 @@
   .events .event .event-Spezialisierung {
     font-size: 1rem;
     font-weight: 400;
-    color: #878895;
+    color: #fff;
     margin-left: 30px;
     pointer-events: none;
   }
@@ -617,3 +614,4 @@
   .credits a:hover {
     text-decoration: underline;
   }
+  

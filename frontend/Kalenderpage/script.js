@@ -271,6 +271,7 @@ function updateEvents(date) {
             </div>
             <div class="Spezialisierung">
             <span class="event-Spezialisierung">${event.Spezialisierung}</span>
+            
         </div>`;
       });
     }
@@ -438,7 +439,7 @@ addEventSubmit.addEventListener("click", () => {
   }
 });
 
-
+//DB GRUPPE MUSS SICH HIER KÜMMERN; DASS DAS EVENT GELÖSCHT WIRD
 //function to delete event when clicked on event
 document.getElementById("loeschen").addEventListener("click", (e) => {
   if (e.target.classList.contains("event")) {

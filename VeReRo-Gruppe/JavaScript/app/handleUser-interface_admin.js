@@ -20,7 +20,7 @@ const connection = mysql.createConnection({
 
 
 function loadUserList(){
-    connection.query('SELECT user FROM user_data_table', (err, results) => {
+    connection.query('SELECT firstname FROM Nutzerdaten', (err, results) => {
         if (err) {
           console.error('Fehler beim Abrufen der Daten: ', err);
           return;
@@ -28,36 +28,39 @@ function loadUserList(){
 
     });
 
-    const columnData = results.map(row => row.deine_spalte);
+    const columnData = results.map(row => row.firstname);
 
     for (i = 0; i < columnData.length - 1; i++){
         //create table elements for every user in the list
         let box_tr = document.createElement("tr");
-        let box_td_1 = document.createElement("td");
-        let box_td_2 = document.createElement("td");
-        let box_td_2_button = createElement("button");
-        let box_td_3 = document.createElement("td");
-        let box_td_3_button = document.createElement("button");
+        let box_td_name = document.createElement("td");
+        let box_td_edit = document.createElement("td");
+        let box_td_edit_button = createElement("button");
+        let box_td_delete = document.createElement("td");
+        let box_td_delete_button = document.createElement("button");
 
         //fill up boxes with dynamic data from for loop from db
-        box_td_1.innerHTML = username_list[i];
-        box_td_2_button.innerHTML = "Bearbeiten";
-        box_td_2.appendChild(box_td_2_button);
-        box_td_3_button.innerHTML = "Löschen";
-        box_td_3.appendChild(box_td_3_button);
+        box_td_name.innerHTML = username_list[i];
+        
+        box_td_edit_button.innerHTML = "Bearbeiten";
+        box_td_edit.appendChild(box_td_2_button);
+        box_td_delete_button.innerHTML = "Löschen";
+        box_td_delete.appendChild(box_td_3_button);
 
         //set boxes id to recognize the id, to start the right function
         box_tr.setAttribute("id", i);
-        box_td_1.setAttribute("id", "cell_1_user_" + i);
-        box_td_2.setAttribute("id", "cell_2_user_" + i);
-        box_td_2_button.setAttribute("id", "editButton" + i);
-        box_td_3.setAttribute("id", "cell_3_user_" + i);
-        box_td_3_button.setAttribute("id", "deleteButton" + i); 
+        box_td_name.setAttribute("id", "cell_1_user_" + i);
+        box_td_edit.setAttribute("id", "cell_2_user_" + i);
+        box_td_edit_button.setAttribute("id", "editButton" + i);
+        box_td_edit.setAttribute("class", "box_td_edit");
+        box_td_delete.setAttribute("id", "cell_3_user_" + i);
+        box_td_delete_button.setAttribute("id", "deleteButton" + i);
+        box_td_delete.setAttribute("class", "box_td_delete");
 
         //set classes for css team to style the table 
-        box_td_1.setAttribute("class", "cell_1_user");
-        box_td_2.setAttribute("class", "cell_2_user");
-        box_td_3.setAttribute("class", "cell_3_user");
+        box_td_name.setAttribute("class", "cell_1_user");
+        box_td_edit.setAttribute("class", "cell_2_user");
+        box_td_delete.setAttribute("class", "cell_3_user");
         box_tr.setAttribute("class", "tableRow_user");
 
         //add finished table row
@@ -66,9 +69,9 @@ function loadUserList(){
 
         //add finished table cells to the table row that was added to the whole table
         if (tableRowChecker !== 0){ 
-            table.insertCell(box_td_1);
-            table.insertCell(box_td_2);
-            table.insertCell(box_td_3);
+            table.insertCell(box_td_name);
+            table.insertCell(box_td_edit);
+            table.insertCell(box_td_delete);
 
             let tableRowChecker = 1;
             return tableRowChecker;
@@ -82,7 +85,7 @@ loadUserList();
 
 
 function deleteUser(){
-    connection.query('SELECT user FROM user_data_table', (err, results) => {
+    connection.query('SELECT firstname FROM Nutzerdaten', (err, results) => {
         if (err) {
           console.error('Fehler beim Abrufen der Daten: ', err);
           return;
@@ -110,7 +113,7 @@ function deleteUser(){
         };
 
 
-        const query = 'SELECT * FROM your_table WHERE unique_column = ?';
+        const query = 'SELECT * FROM Nutzerdaten WHERE unique_column = ?';
         connection.query(query, [selectedUser], (error, results) => {
             if (error) {
                 console.error('Error:', error);
@@ -124,7 +127,9 @@ function deleteUser(){
         
         let rowToDeleteId = selectedRow;
 
-        connection.query('DELETE FROM deine_tabelle WHERE id = ?', [rowToDeleteId], (err, result) => {
+        // delets all the data (the whole row) 
+        
+        connection.query('DELETE FROM Nutzerdaten WHERE id = ?', [rowToDeleteId], (err, result) => {
             if (err) {
             console.error('Fehler beim Löschen der Zeile: ', err);
             return;
@@ -141,6 +146,7 @@ function deleteUser(){
 
 
 function editUser(){
+    //gets the selected User(-name), and gets all the data corresponding to the user through the database 
 
     const td_elements = document.getElementsByTagName("td");
     const buttons = document.getElementsByTagName("button");
@@ -162,7 +168,7 @@ function editUser(){
     //get all the data from the user and put it on the html page, so that the admin can edit the profile
     const uniqueString_Name_User = selectedUser_Name;
     
-    const query = 'SELECT * FROM your_table WHERE unique_column = ?';
+    const query = 'SELECT * FROM Nutzerdaten WHERE unique_column = ?';
     connection.query(query, [uniqueString], (error, results, fields) => {
         if (error) {
           console.error('Error:', error);
@@ -187,5 +193,11 @@ function editUser(){
     let user_company = selectedRow(company);
 
 };
+
+let deleteButton = document.getElementsByClassName("box_td_edit");
+let editButton = document.getElementsByClassName("box_td_delete");
+
+//deleteButton.addEventListener("click", deleteUser)
+//editButton.addEventListener("click", editUser);
 
 connection.end();
