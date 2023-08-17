@@ -340,9 +340,10 @@
 
 
   /* even event */
-  .events .event:nth-child(even) {
+  .events .event{
     background: transparent;
   }
+  
   .events .event:hover {
     background: linear-gradient(90deg, var(--primary-clr), transparent);
   }
