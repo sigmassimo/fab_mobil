@@ -7,6 +7,10 @@ $dbname = "SommerCamp";
 $email=$_GET["email"];
 $passwort=$_GET["passwort"];
 
+//hash password
+$passwort = hash('sha256', $passwort);
+
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -21,6 +25,9 @@ if ($result->num_rows == 0) {
     header("Location: /loginpage/Anmeldung.html");
 } 
 else {
+
+    session_start();
+    $_SESSION['user_id']= //*user id die in $sql=..... selcetiert wird */;
     header("Location: /Kalenderpage/Kalender3.html");
 }
 $conn->close();
