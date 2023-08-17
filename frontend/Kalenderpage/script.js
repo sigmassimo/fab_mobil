@@ -14,6 +14,7 @@ const calendar = document.querySelector(".calendar"),
   addEventWrapper = document.querySelector(".add-event-wrapper "),
   addEventCloseBtn = document.querySelector(".close "),
   addEventTitle = document.querySelector(".event-name "),
+  addEventSpezialisierung = document.querySelector(".event-Spezialisierung"),
   addEventFrom = document.querySelector(".event-time-from "),
   addEventTo = document.querySelector(".event-time-to "),
   addEventSubmit = document.querySelector(".add-event-btn ");
@@ -268,6 +269,8 @@ function updateEvents(date) {
             <div class="event-time">
               <span class="event-time">${event.time}</span>
             </div>
+            <div class="Spezialisierung">
+            <span class="event-Spezialisierung">${event.Spezialisierung}</span>
         </div>`;
       });
     }
@@ -347,7 +350,8 @@ addEventSubmit.addEventListener("click", () => {
   const eventTitle = addEventTitle.value;
   const eventTimeFrom = addEventFrom.value;
   const eventTimeTo = addEventTo.value;
-  if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
+  const eventSpezialisierung = addEventSpezialisierung.value;
+  if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "" || eventSpezialisierung === "") {
     alert("Bitte alle Felder ausfüllen");
     return;
   }
@@ -392,6 +396,8 @@ addEventSubmit.addEventListener("click", () => {
   const newEvent = {
     title: eventTitle,
     time: timeFrom + " - " + timeTo,
+    Spezialisierung: eventSpezialisierung,
+
   };
   console.log(newEvent);
   console.log(activeDay);
@@ -423,6 +429,7 @@ addEventSubmit.addEventListener("click", () => {
   addEventTitle.value = "";
   addEventFrom.value = "";
   addEventTo.value = "";
+  addEventSpezialisierung.value="";
   updateEvents(activeDay);
   //select active day and add event class if not added
   const activeDayEl = document.querySelector(".day.active");
