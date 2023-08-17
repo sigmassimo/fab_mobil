@@ -369,6 +369,13 @@
     margin-left: 15px;
     pointer-events: none;
   }
+  .events .event .event-Spezialisierung {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #878895;
+    margin-left: 30px;
+    pointer-events: none;
+  }
   .events .event:hover .event-time {
     color: #fff;
   }
