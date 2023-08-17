@@ -27,6 +27,16 @@ xhttp.onload = function() {
   year = 2023;
   //title = data.titel;
   //time = data.dauer;
+  const payload = [
+    {
+      day: day,
+      month: month,
+      year: year,
+      events: [
+        
+      ]
+    }
+  ]
   localStorage.setItem("events", '[{"day": ' + day + ',"month":' + month + ',"year": ' + year + ',"events":[{"title":"' + title + '","time":" ' + time + '"},{"title":"IT","time":"2:56 PM - 11:56 PM"}]}]');
 
 
