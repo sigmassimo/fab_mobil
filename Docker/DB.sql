@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb:3306
--- Erstellungszeit: 16. Aug 2023 um 11:10
+-- Erstellungszeit: 16. Aug 2023 um 11:53
 -- Server-Version: 10.5.22-MariaDB-1:10.5.22+maria~ubu2004
 -- PHP-Version: 8.2.8
 
@@ -80,8 +80,10 @@ CREATE TABLE `Rollen` (
 --
 
 INSERT INTO `Rollen` (`rollen_id`, `rollen_name`, `acc_le`, `acc_sc`, `acc_loe`, `pro_le`, `pro_sc`, `pro_loe`, `ter_le`, `ter_sc`, `ter_loe`, `buc_le`, `buc_sc`, `buc_loe`) VALUES
-(1, 'admin', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'),
-(2, 'coordinator', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A');
+(0, 'admin', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'),
+(1, 'coordinator', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'),
+(2, 'workshopleiter', 'S', 'S', 'S', 'A', 'S', 'S', 'A', 'N', 'N', 'A', 'S', 'S'),
+(3, 'external', 'S', 'S', 'S', 'A', 'S', 'S', 'A', 'A', 'A', 'A', 'N', 'N');
 
 -- --------------------------------------------------------
 
@@ -140,15 +142,32 @@ CREATE TABLE `Workshop` (
 --
 
 INSERT INTO `Workshop` (`workshop_id`, `titel`, `beschreibung`, `dauer`) VALUES
-(4, 'elek. Pruefung', 'elek. Pruefung', 6),
-(5, 'Kristall ziehen', 'Kristall ziehen', 8),
-(6, 'Reinigen', 'Reinigen', 6),
-(7, 'Metall/Gasabscheidung', 'Metall/Gasabscheidung', 4),
-(12, 'Strukturierung', 'Strukturierung', 8);
+(1, 'halbleiter', 'halbleiter', 6),
+(2, 'irgend was anderes', 'irgend was anderes', 8),
+(3, 'Reinigen', 'Reinigen', 6),
+(4, 'Metall/Gasabscheidung', 'Metall/Gasabscheidung', 4);
 
 --
 -- Indizes der exportierten Tabellen
 --
+
+--
+-- Indizes für die Tabelle `Nutzerdaten`
+--
+ALTER TABLE `Nutzerdaten`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indizes für die Tabelle `Rollen`
+--
+ALTER TABLE `Rollen`
+  ADD PRIMARY KEY (`rollen_id`);
+
+--
+-- Indizes für die Tabelle `Veranstaltungen`
+--
+ALTER TABLE `Veranstaltungen`
+  ADD PRIMARY KEY (`veranstaltungs_id`);
 
 --
 -- Indizes für die Tabelle `Workshop`
@@ -161,10 +180,22 @@ ALTER TABLE `Workshop`
 --
 
 --
+-- AUTO_INCREMENT für Tabelle `Nutzerdaten`
+--
+ALTER TABLE `Nutzerdaten`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT für Tabelle `Veranstaltungen`
+--
+ALTER TABLE `Veranstaltungen`
+  MODIFY `veranstaltungs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT für Tabelle `Workshop`
 --
 ALTER TABLE `Workshop`
-  MODIFY `workshop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `workshop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
