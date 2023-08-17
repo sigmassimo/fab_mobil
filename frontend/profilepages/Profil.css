@@ -43,12 +43,12 @@ header {
     margin-right: -5%;
     margin-top: 2%;
     float: left;
-    width: 20%;#005d56;
+    width: 20%;
 }
 .rechts{
     float: right;
 }
-<<<<<<< HEAD
+
 
 
 .grid-container {
@@ -63,15 +63,14 @@ header {
   font-size: 20px;
   text-align: left;
 }
-=======
+
 body{
     font-family: Arial;
-<<<<<<< HEAD
+
 }
->>>>>>> b08ca5f26ec9539bab2acd1457c9e39db0b59ca7
-=======
-    color: #005d56;
-}
+
+
+
 #buttonbearbeiten{
     background-color: #b5d334;
     border: #005d56;
@@ -79,4 +78,3 @@ body{
     padding: 14px 40px;
     font-size: 17px;
 }
->>>>>>> 048e255c3ea95703293e061125003847b38c0aa0
