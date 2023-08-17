@@ -35,9 +35,7 @@ if ($result->num_rows > 0) {
   }
 }};
 // ERROR if not
-if ($rollen_id == NULL){
-  echo "Bitte gültige Rolle auswählen!";
-}
+
 
 
 //ander Daten übernehmen
@@ -56,67 +54,49 @@ $beschreibung = $_POST['beschreibung'];
 //check data whether its filled
 
 $errorm ="";
-// if (!isset($firstname)){
-// $errorm .= "Vornamen eingeben";
-// }
-// if (!isset($lastname)){
-// $errorm .= "Nachnamen eingeben";
-// }
-// if (!isset($passwort)){
-//     $errorm .= "Passwort eingeben";
-//   }
 
-// if (!isset($email)){
-//     $errorm .= "Email eingeben";}
-
-// if (!isset($tel_number)){
-//       $errorm .= "Telefonnummer eingeben";}
-
-// if (!isset($stellenname)){
-//     $errorm .= "Stellennamen eingeben";}
-
-// if (!isset($unternehmen)){
-//       $errorm .= "Untermehmen eingeben";}
-// if (!isset($anrede)){
-//   $errorm .= "Anrede eingeben";}
-
-// if (!isset($beschreibung)){
-//   $errorm .= "Beschreibung eingeben";}
-
-if ($firstname==NULL){
-  $errorm .= "Vornamen eingeben ";
-  }
-if ($lastname==NULL){
-  $errorm .= "Nachnamen eingeben ";
-  }
-if ($passwort==NULL){
-  $errorm .= "Passwort eingeben ";
-  }
+if ($rollen_id == NULL){
+  $errorm .= "Bitte gültige Rolle auswählen! ";
+}
 
 if ($email==NULL){
     $errorm .= "Email eingeben ";}
 
-if ($tel_number==NULL OR is_int($tel_number)){
-      $errorm .= "Bitte gültige Telefonnummer eingeben ";
-    }
 
-
-if ($stellenname==NULL){
-    $errorm .= "Stellennamen eingeben ";
+if ($passwort==NULL){
+  $errorm .= "Passwort eingeben ";
   }
 
-if ($unternehmen==NULL){
-      $errorm .= "Untermehmen eingeben ";
-    }
-if ($anrede==NULL){
-  $errorm .= "Anrede eingeben ";}
+// if ($firstname==NULL){
+//     $errorm .= "Vornamen eingeben ";
+//     }
+// if ($lastname==NULL){
+//     $errorm .= "Nachnamen eingeben ";
+//     }
+  
 
-if ($beschreibung==NULL){
-  $errorm .= "Beschreibung eingeben ";}
+// if ($tel_number==NULL OR is_int($tel_number)){
+//       $errorm .= "Bitte gültige Telefonnummer eingeben ";
+//     }
+
+
+// if ($stellenname==NULL){
+//     $errorm .= "Stellennamen eingeben ";
+//   }
+
+// if ($unternehmen==NULL){
+//       $errorm .= "Untermehmen eingeben ";
+//     }
+// if ($anrede==NULL){
+//   $errorm .= "Anrede eingeben ";}
+
+// if ($beschreibung==NULL){
+//   $errorm .= "Beschreibung eingeben ";}
 
 
 
 // $errorm .= "test";
+
 //hashing password
 $passwort= hash('sha256', $passwort);
 //check if password is in field range
