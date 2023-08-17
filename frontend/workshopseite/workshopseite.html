@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="../1header/header.css">
+    <link rel="stylesheet" href="workshopseite.css">
 </head>
 
 <body>
@@ -41,14 +42,35 @@
             <img src="/frontend/photos/Profilbild.jpg">
         </div>
     </header>
-    <div class="container">
+    <div class="container"><!--ALLES MIT DUMMYS POPULIERT-->
         <h1></h1>
-        <div class="Workshopinfo">
+        <div class="infos">
+            <div class="info">
+                <div>Datum:</div>
+                <div>Ort:</div>
+                <div>Startzeit:</div>
+                <div>Dauer:</div>
+                <div>Spezialisierung:</div>
+            </div>
+            <div class="Workshopinfo"><!--CONTAINER FÜR WORKSHOPINFO-->
+                <div>01.01.2000</div>
+                <div>Dresden</div>
+                <div>00:00</div>
+                <div>00:00</div>
+                <div>Lorem ipsum dolor</div>
+            </div>
         </div>
-
     </div>
-    <div class="buchen">
-        <button></button>
+    <div class="buttons">
+        <div class="buchen"> <!--CONTAINER; ECHTER BUTTON MUSS DYNAMISCH SEIN(SESSION TOKEN)-->
+            <button type="submit" value="submit">Buchen</button>
+        </div>
+        <div class="buchendel"><!--CONTAINER; DELETE BUCHUNG IF GEBUCHT-->
+            <button type="submit" value="submit">Buchung zurücknehmen</button>
+        </div>
+        <div class="eventdel"><!--CONTAINER; DELETE EVENT(ADMIN; KOORDINATOR)-->
+            <button type="submit" value="submit">Event löschen</button>
+        </div>
     </div>
     <script>
         const params = new URLSearchParams(location.search);
