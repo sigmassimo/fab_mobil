@@ -48,3 +48,6 @@ header {
 .rechts{
     float: right;
 }
+body{
+    font-family: Arial;
+}
