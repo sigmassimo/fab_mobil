@@ -1,96 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FabBook</title>
-    
-    <script src="./Kalender4script.js"></script>
+
 </head>
 
 <body>
     <header>
         <div>
             <div class="links">
-            <img src="/frontend/photos/Fabmobil-Logo-300x300.jpg" width="70px" height="70px">
+                <img src="/frontend/photos/Fabmobil-Logo-300x300.jpg" width="70px" height="70px">
             </div>
-        <!-- Dateinamen sind nur erstmal Platzhalter, kann man noch ändern-->
-        <div class="kalender">
-          <a href="Kalender.html">
-             Kalender  
-        </a>
-        </div>
-        <div class="kontakte">
-         <a href="file:///C:/Users/IT-SummerCamp/fab_mobil/frontend/Kontaktpage/Kontakte.html">
-            Kontakte
-        </a>
-         </div>
-        
-         <div class="name">
-         <a href="file:///C:/Users/IT-SummerCamp/fab_mobil/frontend/profilepages/Profil.html">
-            Name
-        </a>
-        </div>
+            <!-- Dateinamen sind nur erstmal Platzhalter, kann man noch ändern-->
+            <div class="kalender">
+                <a href="Kalender.html">
+                    Kalender
+                </a>
+            </div>
+            <div class="kontakte">
+                <a href="file:///C:/Users/IT-SummerCamp/fab_mobil/frontend/Kontaktpage/Kontakte.html">
+                    Kontakte
+                </a>
+            </div>
+
+            <div class="name">
+                <a href="file:///C:/Users/IT-SummerCamp/fab_mobil/frontend/profilepages/Profil.html">
+                    Name
+                </a>
+            </div>
             <div class="rechts">
-         <img src="/frontend/photos/Profilbild.jpg" width="70px" height="70px" align="right">
+                <img src="/frontend/photos/Profilbild.jpg" width="70px" height="70px" align="right">
             </div>
         </div>
     </header>
-<style>
-  .box {
-    border: 3px solid #005d56 ;
-    border-radius: 10px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-  }
+    <style>
+        .box {
+            border: 3px solid #005d56;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
 
-  .column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
 
-  .item {
-    margin: 5px;
-  }
-  .location{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    margin-bottom: 5px;
-  }
-  .workshop {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    
-  }
-  .dateandtime {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+        .item {
+            margin: 5px;
+        }
 
-  }
-  a:hover {
-    color: dimgrey;
-  }
-</style>
-</head>
-<body>
- <div id="event">
-    <a href="moin.html">
-<div class="box">
-  <div class="column">
-    <div id="location" class="location">Ort: Dresden</div>
-    <div id="workshop" class="workshop">WS: Kristall ziehen</div>
-  </div>
-  <div class="column">
-    <div class="dateandtime" id="dateandtime">15.08.2023, 12 Uhr</div>
-    <div class="item"></div>
-  </div>
-</a>
-</div>
-</body>
+        .location {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        .workshop {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+
+        }
+
+        .dateandtime {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+
+        }
+
+        a:hover {
+            color: dimgrey;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div id="event">
+            <a href="moin.html">
+                <div class="box">
+                    <div class="column">
+                        <div id="location" class="location">Ort: Dresden</div>
+                        <div id="workshop" class="workshop">WS: Kristall ziehen</div>
+                    </div>
+                    <div class="column">
+                        <div class="dateandtime" id="dateandtime">15.08.2023, 12 Uhr</div>
+                        <div class="item"></div>
+                    </div>
+            </a>
+        </div>
+
+
+        <script src="./Kalender4script.js"></script>
+    </body>
 </body>
 
 </html>
