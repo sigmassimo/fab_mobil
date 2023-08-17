@@ -301,7 +301,7 @@
   .right .today-date .event-day {
     font-size: 2rem;
     font-weight: 500;
-  }
+      }
   .right .today-date .event-date {
     font-size: 1rem;
     font-weight: 400;
@@ -353,20 +353,24 @@
     pointer-events: none;
   }
   .events .event .title .event-title {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 400;
     margin-left: 20px;
+    font-weight:bold
+  }
+  .events .event:hover .title .event-title {
+    color:#3f4458
   }
   .events .event i {
-    color: var(--primary-clr);
+    color: #fff;
     font-size: 0.5rem;
   }
   
   .events .event:hover i {
-    color: #fff;
+    color: #3f4458;
   }
   .events .event .event-time {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 400;
     color: #878895;
     margin-left: 15px;
@@ -375,9 +379,12 @@
   .events .event .event-Spezialisierung {
     font-size: 1rem;
     font-weight: 400;
-    color: #fff;
+    color: #878895;
     margin-left: 30px;
     pointer-events: none;
+  }
+  .events .event:hover .event-Spezialisierung {
+    color:#fff;
   }
   .events .event:hover .event-time {
     color: #fff;
