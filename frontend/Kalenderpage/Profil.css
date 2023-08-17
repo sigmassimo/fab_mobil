@@ -2,25 +2,25 @@ header {
     background-color: #b5d334;
     height: 70px;
 }
-.headerlink:link{
+a:link{
+    color: #a9112c
+}
+a:visited{
     color: #a9112c;
 }
-.headerlink:visited{
+a:active{
     color: #a9112c;
 }
-.headerlink:active{
-    color: #a9112c;
-}
-.headerlink{
+a{
     letter-spacing:1px
 }
-.headerlink{
+a{
     font-size: 100%
 }
-.headerlink:link{
+a:link{
     text-decoration: none;
 }
-.headerlink:hover{
+a:hover{
     color: #ed1b34
 }
 
@@ -45,26 +45,3 @@ header {
     float: left;
     width: 20%;
 }
-.rechts{
-    float: right;
-}
-<<<<<<< HEAD
-
-
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto;
- 
-  padding: 10px;
-}
-.grid-item {
-  
-  padding: 5px;
-  font-size: 20px;
-  text-align: left;
-}
-=======
-body{
-    font-family: Arial;
-}
->>>>>>> b08ca5f26ec9539bab2acd1457c9e39db0b59ca7
