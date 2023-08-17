@@ -60,18 +60,26 @@
                 <div>Lorem ipsum dolor</div>
             </div>
         </div>
+        <div class="participants">
+            <div>Teilnehmer:</div>
+            <div class="participant"><!--CONTAINER FÜR TEILNEHMER-->
+                <div>Max Mustermann</div>
+                <div>Maria Mustermann</div>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="buchen"> <!--CONTAINER; ECHTER BUTTON MUSS DYNAMISCH SEIN(SESSION TOKEN)-->
+                <button type="submit" value="submit">Buchen</button>
+            </div>
+            <div class="buchendel"><!--CONTAINER; DELETE BUCHUNG IF GEBUCHT-->
+                <button type="submit" value="submit">Buchung zurücknehmen</button>
+            </div>
+            <div class="eventdel"><!--CONTAINER; DELETE EVENT(ADMIN; KOORDINATOR)-->
+                <button type="submit" value="submit">Event löschen</button>
+            </div>
+        </div>
     </div>
-    <div class="buttons">
-        <div class="buchen"> <!--CONTAINER; ECHTER BUTTON MUSS DYNAMISCH SEIN(SESSION TOKEN)-->
-            <button type="submit" value="submit">Buchen</button>
-        </div>
-        <div class="buchendel"><!--CONTAINER; DELETE BUCHUNG IF GEBUCHT-->
-            <button type="submit" value="submit">Buchung zurücknehmen</button>
-        </div>
-        <div class="eventdel"><!--CONTAINER; DELETE EVENT(ADMIN; KOORDINATOR)-->
-            <button type="submit" value="submit">Event löschen</button>
-        </div>
-    </div>
+    
     <script>
         const params = new URLSearchParams(location.search);
         document.querySelector("h1").innerText = `Workshop ID ${params.get("id")}`;
