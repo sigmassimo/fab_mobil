@@ -41,7 +41,7 @@ if ($rollen_id == NULL){
 
 
 //ander Daten übernehmen
-$user_id = $_POST['user_id'];
+// $user_id = $_POST['user_id'];       weglassen, zum Autoausfüllen
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
 $passwort = $_POST['passwort'];
@@ -53,16 +53,50 @@ $unternehmen = $_POST['unternehmen'];
 $anrede = $_POST['anrede'];
 $beschreibung = $_POST['beschreibung'];
 
+//check data whether its filled
+
+$error="";
+if (!isset($firstname)){
+$error.="Vornamen eingeben";
+}
+if (!isset($lastname)){
+$error.="Nachnamen eingeben";
+}
+
+if (!isset($passwort)){
+    $error.="Passwort eingeben";}
+
+if (!isset($email)){
+    $error.="Email eingeben";}
+
+if (!isset($tel_number)){
+      $error.="Telefonnummer eingeben";}
+
+if (!isset($stellenname)){
+    $error.="Stellennamen eingeben";}
+
+if (!isset($Unternehmen)){
+      $error.="Untermehmen eingeben";}
+if (!isset($Anrede)){
+  $error.="Anrede eingeben";}
+
+if (!isset($beschreibung)){
+  $error.="Beschreibung eingeben";}
 
 
 
-$sql = "INSERT INTO Nutzerdaten (user_id, firstname, lastname, passwort, rolle_id, email, tel_number, stellenname, unternehmen, anrede, beschreibung)
-VALUES ($user_id, $firstname, $lastname, $passwort, $rollen_id, $email, $tel_number, $stellenname, $unternehmen, $anrede, $beschreibung)";
+if (!$error==""){
+    $sql = "INSERT INTO Nutzerdaten (firstname, lastname, passwort, /*rollen_id,*/ email, tel_number, stellenname, unternehmen, anrede, beschreibung)
+    VALUES ('$firstname', '$lastname', '$passwort', /*'$rollen_id',*/ '$email', '$tel_number', '$stellenname', '$unternehmen', '$anrede', '$beschreibung')";
 
-if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+    if ($conn->query($sql) === TRUE) {
+      echo "New record created successfully";
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}else{
+  echo $error;
 }
 $conn->close();
 ?>
+
