@@ -348,7 +348,7 @@ addEventSubmit.addEventListener("click", () => {
   const eventTimeFrom = addEventFrom.value;
   const eventTimeTo = addEventTo.value;
   if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
-    alert("Please fill all the fields");
+    alert("Bitte alle Felder ausfüllen");
     return;
   }
 
