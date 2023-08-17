@@ -20,6 +20,10 @@ a:hover{
     float: left;
     width: 20%
 }
+.kalender{
+    margin-left: 3%;
+    margin-top: 27px;
+}
 img.logo{
     float: left;
 }
@@ -29,6 +33,17 @@ img.logo{
 }
 .div4{
     float: right;
+    width: 20%;
+}
+.kontakte{
+    float: left;
+    margin-top: 27px;
+    width: 20%;
+}
+.name{
+    margin-right: -5%;
+    margin-top: 27px;
+    float: left;
     width: 20%;
 }
 img.profil{

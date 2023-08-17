@@ -3,29 +3,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil</title>
+    <link rel="stylesheet" href="Profil.css">
 </head>
 <header>
-    <img src="/frontend/photos/Fabmobil-Logo-300x300.jpg" width="70px">
+    <div>
+        <div class="links">
+        <img src="/frontend/photos/Fabmobil-Logo-300x300.jpg" width="70px" height="70px">
+        </div>
     <!-- Dateinamen sind nur erstmal Platzhalter, kann man noch ändern-->
-    
-    <a href="Kalender.html">
+
+    <div class="kalender">
+      <a href="Kalender.html">
          Kalender  
     </a>
-    <a href="Kontakte.html">
+    </div>
+    <div class="kontakte">
+     <a href="Kontakte.html">
         Kontakte
     </a>
+     </div>
     
-    <a href="Profil.html">
+     <div class="name">
+     <a href="Profil.html">
         Name
-        
     </a>
-    <img src="/frontend/photos/Profilbild.jpg" style="width: 70px;" align="right">
-    <hr>
-
+    </div>
+        <div class="rechts">
+     <img src="/frontend/photos/Profilbild.jpg" width="70px" height="70px" align="right">
+        </div>
+    </div>
 </header>
 <!--wenn geöffnet, dann bereits mit Informationen aus Datenbank ausfüllen-->
 <body style="font-family: Arial;">
-
+<br><br>
     <table>
         <tr>
         <th><img src="/frontend/photos/Profilbild.jpg" style="width: 140px;"></th>
@@ -41,7 +51,9 @@
         <p><b>Telefon:</b><input type="text" size="43" maxlength="40"></p></input> 
         <p><b>Beschreibung:</b><input type="text" size="43" maxlength="40"></p></input> 
     <br>
-    <button onklick="Profil.html">
+    <button >  
+      <a href="Profil.html">
         Speichern
-    </button>
+    </a>
+    </button>   
 </body>
