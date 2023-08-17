@@ -41,7 +41,7 @@ if ($rollen_id == NULL){
 
 
 //ander Daten übernehmen
-$user_id = $_POST['user_id'];
+// $user_id = $_POST['user_id'];       weglassen, zum Autoausfüllen
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
 $passwort = $_POST['passwort'];
@@ -56,8 +56,8 @@ $beschreibung = $_POST['beschreibung'];
 
 
 
-$sql = "INSERT INTO Nutzerdaten (user_id, firstname, lastname, passwort, rolle_id, email, tel_number, stellenname, unternehmen, anrede, beschreibung)
-VALUES ($user_id, $firstname, $lastname, $passwort, $rollen_id, $email, $tel_number, $stellenname, $unternehmen, $anrede, $beschreibung)";
+$sql = "INSERT INTO Nutzerdaten (firstname, lastname, passwort, /*rollen_id,*/ email, tel_number, stellenname, unternehmen, anrede, beschreibung)
+VALUES ('$firstname', '$lastname', '$passwort', /*'$rollen_id',*/ '$email', '$tel_number', '$stellenname', '$unternehmen', '$anrede', '$beschreibung')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
