@@ -48,3 +48,17 @@ a:hover{
 .rechts{
     float: right;
 }
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+ 
+  padding: 10px;
+}
+.grid-item {
+  
+  padding: 5px;
+  font-size: 20px;
+  text-align: left;
+}
