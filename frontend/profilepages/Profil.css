@@ -23,6 +23,7 @@ a:link{
 a:hover{
     color: #ed1b34
 }
+
 .links{
     float: left;
     width: 23%;
@@ -43,4 +44,7 @@ a:hover{
     margin-top: 2%;
     float: left;
     width: 20%;
+}
+.rechts{
+    float: right;
 }
