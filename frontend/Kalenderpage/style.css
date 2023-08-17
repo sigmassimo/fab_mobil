@@ -105,6 +105,14 @@
     font-weight: 500;
     text-transform: capitalize;
   }
+  .weekdays .KW{
+    width: 12.5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 10px;
+  }
   .weekdays div {
     width: 12.5%;
     height: 100%;
@@ -115,27 +123,25 @@
   .calendar .daysandweeks{
     width: 100%;
     display: flex;
-    justify-content:space-around ;
+    justify-content: space-around;
   }
   .calendar .weeks{
-    width: 14.28%;
+    width: 12.5%;
+    margin-left: 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 20px;
     font-size: 1rem;
     font-weight: 500;
     margin-bottom: 20px;
     flex-direction: column;
   }
   .calendar .week {
-    width: 100%;
-    margin-left: 75%;
+    width: 80%;
     height: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     color: var(--primary-clr);
     border: 1px solid #f5f5f5;
   }
@@ -144,7 +150,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 20px;
+    padding-right: 20px;
     font-size: 1rem;
     font-weight: 500;
     margin-bottom: 20px;
@@ -367,6 +373,13 @@
     font-weight: 400;
     color: #878895;
     margin-left: 15px;
+    pointer-events: none;
+  }
+  .events .event .event-Spezialisierung {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #878895;
+    margin-left: 30px;
     pointer-events: none;
   }
   .events .event:hover .event-time {

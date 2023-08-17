@@ -7,10 +7,10 @@
 }
 
 .dropdown {
-    position: absolute;
+    position: relative;
     display: inline-block;
-    top:366px;
-    left:-3px;
+    top:-12px;
+    left:-11px;
 }
 
 .dropdown-content {
