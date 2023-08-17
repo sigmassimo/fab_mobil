@@ -35,9 +35,7 @@ if ($result->num_rows > 0) {
   }
 }};
 // ERROR if not
-if ($rollen_id == NULL){
-  echo "Bitte gültige Rolle auswählen!";
-}
+
 
 
 //ander Daten übernehmen
@@ -47,7 +45,7 @@ $lastname = $_POST['lastname'];
 $passwort = $_POST['passwort'];
 // $rolle_id =$_POST['rollen'];
 $email = $_POST['email'];
-$tel_number = $_POST['tel_number'];
+// $tel_number = $_POST['tel_number'];
 $stellenname = $_POST['stellenname'];
 $unternehmen = $_POST['unternehmen'];
 $anrede = $_POST['anrede'];
@@ -55,39 +53,64 @@ $beschreibung = $_POST['beschreibung'];
 
 //check data whether its filled
 
-$error="";
-if (!isset($firstname)){
-$error.="Vornamen eingeben";
-}
-if (!isset($lastname)){
-$error.="Nachnamen eingeben";
+$errorm ="";
+
+if ($rollen_id == NULL){
+  $errorm .= "Bitte gültige Rolle auswählen! ";
 }
 
-if (!isset($passwort)){
-    $error.="Passwort eingeben";}
-
-if (!isset($email)){
-    $error.="Email eingeben";}
-
-if (!isset($tel_number)){
-      $error.="Telefonnummer eingeben";}
-
-if (!isset($stellenname)){
-    $error.="Stellennamen eingeben";}
-
-if (!isset($Unternehmen)){
-      $error.="Untermehmen eingeben";}
-if (!isset($Anrede)){
-  $error.="Anrede eingeben";}
-
-if (!isset($beschreibung)){
-  $error.="Beschreibung eingeben";}
+if ($email==NULL){
+    $errorm .= "Email eingeben ";}
 
 
+if ($passwort==NULL){
+  $errorm .= "Passwort eingeben ";
+  }
 
-if (!$error==""){
-    $sql = "INSERT INTO Nutzerdaten (firstname, lastname, passwort, /*rollen_id,*/ email, tel_number, stellenname, unternehmen, anrede, beschreibung)
-    VALUES ('$firstname', '$lastname', '$passwort', /*'$rollen_id',*/ '$email', '$tel_number', '$stellenname', '$unternehmen', '$anrede', '$beschreibung')";
+// if ($firstname==NULL){
+//     $errorm .= "Vornamen eingeben ";
+//     }
+// if ($lastname==NULL){
+//     $errorm .= "Nachnamen eingeben ";
+//     }
+  
+
+// if ($tel_number==NULL OR is_int($tel_number)){
+//       $errorm .= "Bitte gültige Telefonnummer eingeben ";
+//     }
+echo $tel_number;
+if ($tel_number=NULL)
+  {$tel_number=0;}
+
+// if ($stellenname==NULL){
+//     $errorm .= "Stellennamen eingeben ";
+//   }
+
+// if ($unternehmen==NULL){
+//       $errorm .= "Untermehmen eingeben ";
+//     }
+// if ($anrede==NULL){
+//   $errorm .= "Anrede eingeben ";}
+
+// if ($beschreibung==NULL){
+//   $errorm .= "Beschreibung eingeben ";}
+
+
+
+// $errorm .= "test";
+
+//hashing password
+$passwort= hash('sha256', $passwort);
+//check if password is in field range
+// if (strlen($passwort) <=12){
+//   $errorm .= "Hash zu lang";
+// }
+
+
+if ($errorm ==""){
+
+    $sql = "INSERT INTO Nutzerdaten (firstname, lastname, passwort, rollen_id, email, tel_number, stellenname, unternehmen, anrede, beschreibung)
+    VALUES ('$firstname', '$lastname', '$passwort', '$rollen_id', '$email', '$tel_number', '$stellenname', '$unternehmen', '$anrede', '$beschreibung')";
 
     if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
@@ -95,7 +118,7 @@ if (!$error==""){
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }else{
-  echo $error;
+  echo $errorm;
 }
 $conn->close();
 ?>

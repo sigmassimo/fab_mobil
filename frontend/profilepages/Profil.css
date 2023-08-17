@@ -43,11 +43,40 @@ header {
     margin-right: -5%;
     margin-top: 2%;
     float: left;
-    width: 20%;
+    width: 20%;#005d56;
 }
 .rechts{
     float: right;
 }
+<<<<<<< HEAD
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+ 
+  padding: 10px;
+}
+.grid-item {
+  
+  padding: 5px;
+  font-size: 20px;
+  text-align: left;
+}
+=======
 body{
     font-family: Arial;
+<<<<<<< HEAD
 }
+>>>>>>> b08ca5f26ec9539bab2acd1457c9e39db0b59ca7
+=======
+    color: #005d56;
+}
+#buttonbearbeiten{
+    background-color: #b5d334;
+    border: #005d56;
+    color: #005d56;
+    padding: 14px 40px;
+    font-size: 17px;
+}
+>>>>>>> 048e255c3ea95703293e061125003847b38c0aa0
