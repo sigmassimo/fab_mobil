@@ -45,7 +45,7 @@ $lastname = $_POST['lastname'];
 $passwort = $_POST['passwort'];
 // $rolle_id =$_POST['rollen'];
 $email = $_POST['email'];
-$tel_number = $_POST['tel_number'];
+// $tel_number = $_POST['tel_number'];
 $stellenname = $_POST['stellenname'];
 $unternehmen = $_POST['unternehmen'];
 $anrede = $_POST['anrede'];
@@ -78,7 +78,9 @@ if ($passwort==NULL){
 // if ($tel_number==NULL OR is_int($tel_number)){
 //       $errorm .= "Bitte gültige Telefonnummer eingeben ";
 //     }
-
+echo $tel_number;
+if ($tel_number=NULL)
+  {$tel_number=0;}
 
 // if ($stellenname==NULL){
 //     $errorm .= "Stellennamen eingeben ";
