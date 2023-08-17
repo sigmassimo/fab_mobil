@@ -1,0 +1,10 @@
+.alles {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.TitelWorkshop {
+    color: #005d56;
+}
+.eingabe {
+    display: flex;
+    justify-content: center;
+}
