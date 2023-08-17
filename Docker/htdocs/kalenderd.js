@@ -15,9 +15,12 @@ xhttp.onload = function() {
         et = changeTimeFormat(etsplit[0],etsplit[1]);
         
         singledate = response[i].datum.split("-");
-        events = events + '{"day":' + parseInt(singledate[2]) + ',"month":' + parseInt(singledate[1]) + ',"year":' + parseInt(singledate[0]) + ',"events":[{"title":"' + response[i].ort + '","time":"' + bt + ' - ' + et + '"}]},';
-        
-                //localStorage.setItem('events','[{"day":' + singledate[2] + ',"month":' + singledate[1] + ',"year":' + singledate[0] + ',"events":[{"title":"' + response[i].ort + '","time":"' + bt + ' - ' + et + '"}]}]');
+        if (i+1 < response.length) {
+            events = events + '{"day":' + parseInt(singledate[2]) + ',"month":' + parseInt(singledate[1]) + ',"year":' + parseInt(singledate[0]) + ',"events":[{"title":"' + response[i].ort + '","time":"' + bt + ' - ' + et + '","Spezialisierung":"'+ response[i].spezialisierung +'"}]},';
+        }else{
+            events = events + '{"day":' + parseInt(singledate[2]) + ',"month":' + parseInt(singledate[1]) + ',"year":' + parseInt(singledate[0]) + ',"events":[{"title":"' + response[i].ort + '","time":"' + bt + ' - ' + et + '","Spezialisierung":"'+ response[i].spezialisierung +'"}]}';
+        }
+               
          
     }
     events = events + "]"
