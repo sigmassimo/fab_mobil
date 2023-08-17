@@ -1,34 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Workshop hinzufügen</title>
     <link rel="stylesheet" href="hinzufuegen.css">
+    <link rel="stylesheet" href="../1header/header.css">
 </head>
+
 <body>
-   
+    <header>
+        <div class="left">
+            <!--<div class="logo">
+                FabBook
+            </div>--> <!--FALLS WIR UNSER LOGO NUR ALS TEXT GESTALTEN WOLLEN-->
+            <img src="../photos/Fabmobil-Logo-300x300.jpg">
+        </div>
+        <div class="links">
+            <div class="kalender">
+                <a class="headerlink" href="../Kalenderpage/kalender4.html">
+                    Kalender
+                </a>
+            </div>
+            <div class="kontakte">
+                <a class="headerlink" href="../Kontaktpage/Kontakte.html">
+                    Kontakte
+                </a>
+            </div>
+
+            <div class="name"> <!--DYNAMISCHER LINK ÜBER SESSION TOKEN-->
+                <a class="headerlink" href="../profilepages/Profil.html">
+                    Profil
+                </a>
+            </div>
+            <div class="admin"> <!--DIV FÜR ADMIN-->
+
+            </div>
+        </div>
+        <div class="right"> <!--PFP MUSS HIER NOCH REINGEDROPT WERDEN-->
+            <img src="/frontend/photos/Profilbild.jpg">
+        </div>
+    </header>
     <div class="alles">
-    <div class="TitelWorkshop">
-    <h1> Workshop hinzufügen</h1>
-    </div>
-    <div class="eingabe">
-        <label> Titel</label>
-        <input type="text">
-        <br>
-        <label> Dauer</label>
-        <input type="text">
-        <br>
-        <label>Ort</label>
-        <input type="text">
-        <br>
-        <label> Beschreibung</label>
-        <input type="text">
-        <br>
-    </div>
+        <div class="TitelWorkshop">
+            <h1> Workshop hinzufügen</h1>
+        </div>
+        <div class="eingabe">
+            <label> Titel</label>
+            <input type="text">
+            <br>
+            <label> Dauer</label>
+            <input type="text">
+            <br>
+            <label>Ort</label>
+            <input type="text">
+            <br>
+            <label> Beschreibung</label>
+            <input type="text">
+            <br>
+        </div>
     </div>
 
 
-    
+
 </body>
+
 </html>

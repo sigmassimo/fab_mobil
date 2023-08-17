@@ -1,46 +1,53 @@
 <!Doctype html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil</title>
-    <link rel="stylesheet" href="Profil.css">
+    <link rel="stylesheet" href="../1header/header.css">
 </head>
 <header>
-    <div>
-        <div class="links">
-        <img src="/frontend/photos/Fabmobil-Logo-300x300.jpg" width="70px" height="70px">
-        </div>
-    <!-- Dateinamen sind nur erstmal Platzhalter, kann man noch ändern-->
-    <div class="kalender">
-      <a class="headerlink" href="../Kalenderpage/kalender4.html">
-         Kalender  
-    </a>
+    <div class="left">
+        <!--<div class="logo">
+            FabBook
+        </div>--> <!--FALLS WIR UNSER LOGO NUR ALS TEXT GESTALTEN WOLLEN-->
+        <img src="../photos/Fabmobil-Logo-300x300.jpg">
     </div>
-    <div class="kontakte">
-     <a class="headerlink" href="../Kontaktpage/Kontakte.html">
-        Kontakte
-    </a>
-     </div>
-    
-     <div class="name">
-     <a class="headerlink" href="../profilepages/Profil.html">
-        Profil
-    </a>
-    </div>
-        <div class="rechts">
-     <img src="/frontend/photos/Profilbild.jpg" width="70px" height="70px" align="right">
+    <div class="links">
+        <div class="kalender">
+            <a class="headerlink" href="../Kalenderpage/kalender4.html">
+                Kalender
+            </a>
         </div>
+        <div class="kontakte">
+            <a class="headerlink" href="../Kontaktpage/Kontakte.html">
+                Kontakte
+            </a>
+        </div>
+
+        <div class="name"> <!--DYNAMISCHER LINK ÜBER SESSION TOKEN-->
+            <a class="headerlink" href="../profilepages/Profil.html">
+                Profil
+            </a>
+        </div>
+        <div class="admin"> <!--DIV FÜR ADMIN-->
+
+        </div>
+    </div>
+    <div class="right"> <!--PFP MUSS HIER NOCH REINGEDROPT WERDEN-->
+        <img src="/frontend/photos/Profilbild.jpg">
     </div>
 </header>
 <!--wenn geöffnet, dann bereits mit Informationen aus Datenbank ausfüllen-->
+
 <body>
-<br><br>
+    <br><br>
     <table>
         <tr>
-        <th><img src="../photos/Profilbild.jpg" style="width: 140px;"></th>
+            <th><img src="../photos/Profilbild.jpg" style="width: 140px;"></th>
         </tr>
     </table>
-        <!-- <br>
+    <!-- <br>
                         
         <div>
             <div>
@@ -68,27 +75,27 @@
         </div>
     
         <br> -->
-        <div class="grid-container">
-            <div class="grid-item"><b>Anrede:</b></div>
-            <div class="grid-item"><input type="text" style="margin-top: -3px"></div>
-            <div class="grid-item"><b>Name:</b></div>  
-            <div class="grid-item"><input type="text" style="margin-top: -3px"></div>
-            <div class="grid-item"><b>Vorname:</b></div>
-            <div class="grid-item"><input type="text" style="margin-top: -3px"></div>  
-            <div class="grid-item"><b>Unternehmen:</b></div>
-            <div class="grid-item"><input type="text" style="margin-top: -3px"></div>
-            <div class="grid-item"><b>Job:</b></div> 
-            <div class="grid-item"><input type="text" style="margin-top: -3px"></div>
-            <div class="grid-item"><b>E-Mail:</b></div>
-            <div class="grid-item"><input type="text" style="margin-top: -3px"></div>
-            <div class="grid-item"><b>Telefon:</b></div>
-            <div class="grid-item"><input type="text" style="margin-top: -3px"></div>
-            <div class="grid-item"><b>Beschreibung:</b></div>
-            <div class="grid-item"><input type="text" style="margin-top: -3px"></div> 
-          </div>
-    <button >  
-      <a href="Profil.html">
-        Speichern
-    </a>
-    </button>   
+    <div class="grid-container">
+        <div class="grid-item"><b>Anrede:</b></div>
+        <div class="grid-item"><input type="text" style="margin-top: -3px"></div>
+        <div class="grid-item"><b>Name:</b></div>
+        <div class="grid-item"><input type="text" style="margin-top: -3px"></div>
+        <div class="grid-item"><b>Vorname:</b></div>
+        <div class="grid-item"><input type="text" style="margin-top: -3px"></div>
+        <div class="grid-item"><b>Unternehmen:</b></div>
+        <div class="grid-item"><input type="text" style="margin-top: -3px"></div>
+        <div class="grid-item"><b>Job:</b></div>
+        <div class="grid-item"><input type="text" style="margin-top: -3px"></div>
+        <div class="grid-item"><b>E-Mail:</b></div>
+        <div class="grid-item"><input type="text" style="margin-top: -3px"></div>
+        <div class="grid-item"><b>Telefon:</b></div>
+        <div class="grid-item"><input type="text" style="margin-top: -3px"></div>
+        <div class="grid-item"><b>Beschreibung:</b></div>
+        <div class="grid-item"><input type="text" style="margin-top: -3px"></div>
+    </div>
+    <button>
+        <a href="Profil.html">
+            Speichern
+        </a>
+    </button>
 </body>

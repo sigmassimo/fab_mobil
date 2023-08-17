@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil</title>
-    <link rel="stylesheet" href="../profilepages/Profil.css">
+    <link rel="stylesheet" href="../1header/header.css">
 </head>
 <header>
-    <div>
-        <div class="links">
-            <img src="/frontend/photos/Fabmobil-Logo-300x300.jpg" width="70px" height="70px">
-        </div>
-        <!-- Dateinamen sind nur erstmal Platzhalter, kann man noch ändern-->
+    <div class="left">
+        <!--<div class="logo">
+            FabBook
+        </div>--> <!--FALLS WIR UNSER LOGO NUR ALS TEXT GESTALTEN WOLLEN-->
+        <img src="../photos/Fabmobil-Logo-300x300.jpg">
+    </div>
+    <div class="links">
         <div class="kalender">
             <a class="headerlink" href="../Kalenderpage/kalender4.html">
                 Kalender
@@ -23,14 +25,17 @@
             </a>
         </div>
 
-        <div class="name">
+        <div class="name"> <!--DYNAMISCHER LINK ÜBER SESSION TOKEN-->
             <a class="headerlink" href="../profilepages/Profil.html">
                 Profil
             </a>
         </div>
-        <div class="rechts">
-            <img src="/frontend/photos/Profilbild.jpg" width="70px" height="70px" align="right">
+        <div class="admin"> <!--DIV FÜR ADMIN-->
+
         </div>
+    </div>
+    <div class="right"> <!--PFP MUSS HIER NOCH REINGEDROPT WERDEN-->
+        <img src="/frontend/photos/Profilbild.jpg">
     </div>
 </header>
 

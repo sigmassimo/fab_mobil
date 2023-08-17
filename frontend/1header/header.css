@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-color: lightgrey;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.left {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1%;
+}
+
+.left img {
+    height: 70px;
+    width: 70px;
+}
+
+/*.logo {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1px;
+    height: 35px;
+    width: 90px;
+    color: black;
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b5d334;
+    border-radius: 35px;
+}*/
+
+.links {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: bolder;
+}
+
+.kontakte {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kalender {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header a {
+    letter-spacing: 1px
+} 
+
+header a:link {
+    text-decoration: none;
+} 
+
+header a:link {
+    color: #a9112c
+}
+
+header a:visited {
+    color: #a9112c;
+}
+
+header a:active {
+    color: #a9112c;
+}
+
+header a:hover {
+    color: #ed1b34
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1%;
+}
+
+.right img {
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+}
