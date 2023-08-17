@@ -115,7 +115,7 @@ if ($beschreibung==NULL){
   $errorm .= "Beschreibung eingeben ";}
 
 
-  
+
 // $errorm .= "test";
 //hashing password
 $passwort= hash('sha256', $passwort);

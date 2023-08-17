@@ -5,8 +5,7 @@ const xhttp = new XMLHttpRequest();
 xhttp.onload = function() {
     
     response = JSON.parse(this.responseText);
-   events = "[";
-    for ( i = 0; i < response.length; i++) {
+   for ( i = 0; i < response.length; i++) {
         console.log(response[i].startzeit);
         console.log(response[i].endzeit);
         btsplit = response[i].startzeit.split(":")
@@ -15,12 +14,16 @@ xhttp.onload = function() {
         et = changeTimeFormat(etsplit[0],etsplit[1]);
         
         singledate = response[i].datum.split("-");
-        events = events + '{"day":' + parseInt(singledate[2]) + ',"month":' + parseInt(singledate[1]) + ',"year":' + parseInt(singledate[0]) + ',"events":[{"title":"' + response[i].ort + '","time":"' + bt + ' - ' + et + '"}]},';
-        
-                //localStorage.setItem('events','[{"day":' + singledate[2] + ',"month":' + singledate[1] + ',"year":' + singledate[0] + ',"events":[{"title":"' + response[i].ort + '","time":"' + bt + ' - ' + et + '"}]}]');
+        if (i+1 < response.length) {
+            events = events + '{"day":' + parseInt(singledate[2]) + ',"month":' + parseInt(singledate[1]) + ',"year":' + parseInt(singledate[0]) + ',"events":[{"title":"' + response[i].ort + '","time":"' + bt + ' - ' + et + '","Spezialisierung":"'+ response[i].spezialisierung +'"}]},';
+        }else{
+            events = events + '{"day":' + parseInt(singledate[2]) + ',"month":' + parseInt(singledate[1]) + ',"year":' + parseInt(singledate[0]) + ',"events":[{"title":"' + response[i].ort + '","time":"' + bt + ' - ' + et + '","Spezialisierung":"'+ response[i].spezialisierung +'"}]}';
+        }
+               
          
     }
     events = events + "]"
+    localStorage.setItem('events',events);
     localStorage.setItem('events',events);
 
 }
