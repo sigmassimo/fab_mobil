@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb:3306
--- Erstellungszeit: 16. Aug 2023 um 11:53
+-- Erstellungszeit: 18. Aug 2023 um 09:49
 -- Server-Version: 10.5.22-MariaDB-1:10.5.22+maria~ubu2004
 -- PHP-Version: 8.2.8
 
@@ -46,11 +46,12 @@ CREATE TABLE `Nutzerdaten` (
 --
 
 INSERT INTO `Nutzerdaten` (`user_id`, `firstname`, `lastname`, `passwort`, `rollen_id`, `email`, `tel_number`, `stellenname`, `unternehmen`, `anrede`, `beschreibung`) VALUES
-(1, 'ä', 'ä', 1, 1, '1', 1, '1', '1', '1', '1'),
-(2, 'k', 'k', 40404, 1, 'vfopdfvkodfk', 204958328, 'xkemfkj', 'dkdekfk', ' ckfvkc k', 'cvkmdfk kcf'),
-(3, 'ä', 'l', 1, 1, 'aa', 11, 'hgt', 'rr', 'ff', 'fgrg'),
-(4, 'vdfgdfg', 'rgeg', 4545, 2, 'ferewr', 4534535, 'dghegrg', 'rgergeg', 'ergeg', 'ergergerg'),
-(5, 'hans', 'heinrich', 4545, 2, 'ferewr', 4534535, 'dghegrg', 'rgergeg', 'ergeg', 'ergergerg');
+(6, 'admin', 'admin', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 0, 'admin@outlook.com', '', '', '', '', ''),
+(7, 'Jens', 'Beyer', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 2, 'jens.beyer@outlook.com', '13456789', '', '', '', ''),
+(9, 'Sebastian', 'Piatza', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 2, 'sebastian.piatza@outlook.com', '13456789', '', '', '', ''),
+(10, 'Christian', 'Zöllner', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 2, 'christian.zöllner@outlook.com', '123456789', '', '', '', ''),
+(11, 'Annett', 'Löser', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 2, 'annett.löser@outlook.com', '', '', '', '', ''),
+(12, 'Valena', 'Ammon', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', 2, 'valena.ammon@outlook.com', '1356789', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -92,9 +93,17 @@ INSERT INTO `Rollen` (`rollen_id`, `rollen_name`, `acc_le`, `acc_sc`, `acc_loe`,
 --
 
 CREATE TABLE `Teilnehmer` (
+  `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `veranstaltungs_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Daten für Tabelle `Teilnehmer`
+--
+
+INSERT INTO `Teilnehmer` (`id`, `user_id`, `veranstaltungs_id`) VALUES
+(1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -116,13 +125,13 @@ CREATE TABLE `Veranstaltungen` (
 --
 
 INSERT INTO `Veranstaltungen` (`veranstaltungs_id`, `datum`, `ort`, `start_zeit`, `workshop_id`, `spezialisierung`) VALUES
-(1, '2023-08-15', 'Dresden', '12:48:06', 7, 'Kristall ziehen'),
-(6, '2024-08-03', 'Oberschule Kitzscher\r\n', NULL, 1, NULL),
-(7, '2023-08-10', 'Oberschule Borna', NULL, 1, NULL),
-(8, '2023-10-19', 'Oberschule Frohburg', NULL, 1, NULL),
-(9, '2024-05-24', 'Oberschule Claußnitz\r\n', NULL, 1, NULL),
-(12, '2024-04-17', 'Martin – Luther Gymnasium, Frankenberg\r\n', NULL, 1, NULL),
-(13, '2024-07-18', 'Friedrich Rückert Grundschule, Plauen', NULL, 1, NULL);
+(1, '2023-08-15', 'Dresden', '12:00:00', 7, 'Kristall ziehen'),
+(6, '2024-08-03', 'Oberschule Kitzscher\r\n', '10:00:00', 1, 'elek. Prüfung'),
+(7, '2023-08-10', 'Oberschule Borna', '08:00:00', 1, 'Reinigen'),
+(8, '2023-10-19', 'Oberschule Frohburg', '09:00:00', 1, 'Qualitätssicherung'),
+(9, '2024-05-24', 'Oberschule Claußnitz\r\n', '13:00:00', 1, 'Metall/Gas abschedung'),
+(12, '2024-04-17', 'Martin – Luther Gymnasium, Frankenberg\r\n', '07:00:00', 1, 'Strukturierung'),
+(13, '2024-07-18', 'Friedrich Rückert Grundschule, Plauen', '15:00:00', 1, 'Packing');
 
 -- --------------------------------------------------------
 
@@ -164,6 +173,12 @@ ALTER TABLE `Rollen`
   ADD PRIMARY KEY (`rollen_id`);
 
 --
+-- Indizes für die Tabelle `Teilnehmer`
+--
+ALTER TABLE `Teilnehmer`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indizes für die Tabelle `Veranstaltungen`
 --
 ALTER TABLE `Veranstaltungen`
@@ -183,7 +198,13 @@ ALTER TABLE `Workshop`
 -- AUTO_INCREMENT für Tabelle `Nutzerdaten`
 --
 ALTER TABLE `Nutzerdaten`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT für Tabelle `Teilnehmer`
+--
+ALTER TABLE `Teilnehmer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT für Tabelle `Veranstaltungen`
