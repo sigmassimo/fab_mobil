@@ -1,65 +1,74 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="Profil.css">
+<link rel="stylesheet" href="../1header/header.css">
+
 <html>
+
 <head>
-    <header>
-        <div>
-            <div class="links">
-            <img src="/frontend/photos/Fabmobil-Logo-300x300.jpg" width="70px" height="70px">
-            </div>
-        <!-- Dateinamen sind nur erstmal Platzhalter, kann man noch ändern-->
+  <header>
+    <div class="left">
+        <!--<div class="logo">
+            FabBook
+        </div>--> <!--FALLS WIR UNSER LOGO NUR ALS TEXT GESTALTEN WOLLEN-->
+        <img src="../photos/Fabmobil-Logo-300x300.jpg">
+    </div>
+    <div class="links">
         <div class="kalender">
-          <a href="Kalender.html">
-             Kalender  
-        </a>
+            <a class="headerlink" href="../Kalenderpage/kalender4.html">
+                Kalender
+            </a>
         </div>
         <div class="kontakte">
-         <a href="file:///C:/Users/IT-SummerCamp/fab_mobil/frontend/Kontaktpage/Kontakte.html">
-            Kontakte
-        </a>
-         </div>
-        
-         <div class="name">
-         <a href="file:///C:/Users/IT-SummerCamp/fab_mobil/frontend/profilepages/Profil.html">
-            Name
-        </a>
+            <a class="headerlink" href="../Kontaktpage/Kontakte.html">
+                Kontakte
+            </a>
         </div>
-            <div class="rechts">
-         <img src="/frontend/photos/Profilbild.jpg" width="70px" height="70px" align="right">
-            </div>
+
+        <div class="name"> <!--DYNAMISCHER LINK ÜBER SESSION TOKEN-->
+            <a class="headerlink" href="../profilepages/Profil.html">
+                Profil
+            </a>
         </div>
-    </header>
-<style>
-  .box {
-    border: 1px solid #000;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-  }
+        <div class="admin"> <!--DIV FÜR ADMIN-->
 
-  .column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
+        </div>
+    </div>
+    <div class="right"> <!--PFP MUSS HIER NOCH REINGEDROPT WERDEN-->
+        <img src="/frontend/photos/Profilbild.jpg">
+    </div>
+</header>
+  <style>
+    .box {
+      border: 1px solid #000;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
 
-  .item {
-    margin: 5px;
-  }
-</style>
+    .column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item {
+      margin: 5px;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="box">
-  <div class="column">
-    <div class="item" id="location"></div>
-    <div class="item" id="workshop"></div>
+  <div class="box">
+    <div class="column">
+      <div class="item" id="location"></div>
+      <div class="item" id="workshop"></div>
+    </div>
+    <div class="column">
+      <div class="item" id="dateandtime"></div>
+      <div class="item"></div>
+    </div>
   </div>
-  <div class="column">
-    <div class="item" id="dateandtime"></div>
-    <div class="item"></div>
-  </div>
-</div>
 
 </body>
+
 </html>

@@ -3,6 +3,8 @@ $servername = "host.docker.internal";
 $username = "SommerCamp";
 $password = "Sommer2023";
 $dbname = "SommerCamp";
+$type = $_GET["type"];
+$id = $_GET["user_id"];
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -12,13 +14,11 @@ if ($conn->connect_error) {
 }
 
 // sql to delete a record
-$sql = "DELETE FROM MyGuests WHERE id=3";
+$sql = "DELETE FROM $type WHERE user_id = $id";
 
-if ($conn->query($sql) === TRUE) {
-  echo "Record deleted successfully";
-} else {
-  echo "Error deleting record: " . $conn->error;
-}
+
+$result = $conn->query($sql);
+$conn->query($sql);
 
 $conn->close();
 ?>

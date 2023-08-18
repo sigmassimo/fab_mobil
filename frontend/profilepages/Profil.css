@@ -48,6 +48,33 @@ header {
 .rechts{
     float: right;
 }
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+ 
+  padding: 10px;
+}
+.grid-item {
+  
+  padding: 5px;
+  font-size: 20px;
+  text-align: left;
+}
+
 body{
     font-family: Arial;
+
+}
+
+
+
+#buttonbearbeiten{
+    background-color: #b5d334;
+    border: #005d56;
+    color: #005d56;
+    padding: 14px 40px;
+    font-size: 17px;
 }

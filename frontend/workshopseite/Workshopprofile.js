@@ -1,4 +1,4 @@
-const TermineContainer = document.querySelector("#event");    
+const TermineContainer = document.querySelector(".workshop");    
 
 async function getDates(){
     const req = await fetch("/api/php_ausgabe/Veranstaltungen.php");

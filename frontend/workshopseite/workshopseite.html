@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../1header/header.css">
+    <link rel="stylesheet" href="workshopseite.css">
+</head>
+
+<body>
+    <header>
+        <div class="left">
+            <!--<div class="logo">
+                FabBook
+            </div>--> <!--FALLS WIR UNSER LOGO NUR ALS TEXT GESTALTEN WOLLEN-->
+            <img src="../photos/Fabmobil-Logo-300x300.jpg">
+        </div>
+        <div class="links">
+            <div class="kalender">
+                <a class="headerlink" href="../Kalenderpage/kalender4.html">
+                    Kalender
+                </a>
+            </div>
+            <div class="kontakte">
+                <a class="headerlink" href="../Kontaktpage/Kontakte.html">
+                    Kontakte
+                </a>
+            </div>
+
+            <div class="name"> <!--DYNAMISCHER LINK ÜBER SESSION TOKEN-->
+                <a class="headerlink" href="../profilepages/Profil.html">
+                    Profil
+                </a>
+            </div>
+            <div class="admin"> <!--DIV FÜR ADMIN-->
+
+            </div>
+        </div>
+        <div class="right"> <!--PFP MUSS HIER NOCH REINGEDROPT WERDEN-->
+            <img src="/frontend/photos/Profilbild.jpg">
+        </div>
+    </header>
+    <div class="container"><!--ALLES MIT DUMMYS POPULIERT-->
+        <h1></h1>
+        <div class="infos">
+            <div class="info">
+                <div>Datum:</div>
+                <div>Ort:</div>
+                <div>Startzeit:</div>
+                <div>Dauer:</div>
+                <div>Spezialisierung:</div>
+            </div>
+            <div class="Workshopinfo"><!--CONTAINER FÜR WORKSHOPINFO-->
+                <div>01.01.2000</div>
+                <div>Dresden</div>
+                <div>00:00</div>
+                <div>00:00</div>
+                <div>Lorem ipsum dolor</div>
+            </div>
+        </div>
+        <div class="participants">
+            <div>Teilnehmer:</div>
+            <div class="participant"><!--CONTAINER FÜR TEILNEHMER-->
+                <div>Max Mustermann</div>
+                <div>Maria Mustermann</div>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="buchen"> <!--CONTAINER; ECHTER BUTTON MUSS DYNAMISCH SEIN(SESSION TOKEN)-->
+                <button type="submit" value="submit">Buchen</button>
+            </div>
+            <div class="buchendel"><!--CONTAINER; DELETE BUCHUNG IF GEBUCHT-->
+                <button type="submit" value="submit">Buchung zurücknehmen</button>
+            </div>
+            <div class="eventdel"><!--CONTAINER; DELETE EVENT(ADMIN; KOORDINATOR)-->
+                <button type="submit" value="submit">Event löschen</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const params = new URLSearchParams(location.search);
+        document.querySelector("h1").innerText = `Workshop ID ${params.get("id")}`;
+    </script>
+</body>
+
+</html>

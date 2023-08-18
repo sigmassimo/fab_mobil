@@ -1,51 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="width=device-width,  initial-scale=1.0">
     <link rel="stylesheet" href="WorkshopProfil.css">
-    <link rel="stylesheet" href="Profil.css">
-   <title>FabBook: Workshop</title>
+    <link rel="stylesheet" href="../1header/header.css">
+    <title>FabBook: Workshop</title>
 
 </head>
 <header>
-    <div>
-        <div class="links">
-        <img src="/frontend/photos/Fabmobil-Logo-300x300.jpg" width="70px" height="70px">
+    <div class="left">
+        <!--<div class="logo">
+            FabBook
+        </div>--> <!--FALLS WIR UNSER LOGO NUR ALS TEXT GESTALTEN WOLLEN-->
+        <img src="../photos/Fabmobil-Logo-300x300.jpg">
+    </div>
+    <div class="links">
+        <div class="kalender">
+            <a class="headerlink" href="../Kalenderpage/kalender4.html">
+                Kalender
+            </a>
         </div>
-    <!-- Dateinamen sind nur erstmal Platzhalter, kann man noch ändern-->
-    <div class="kalender">
-      <a href="Kalender.html">
-         Kalender  
-    </a>
-    </div>
-    <div class="kontakte">
-     <a href="file:///C:/Users/IT-SummerCamp/fab_mobil/frontend/Kontaktpage/Kontakte.html">
-        Kontakte
-    </a>
-     </div>
-    
-     <div class="name">
-     <a href="Profil.html">
-        Profil
-    </a>
-    </div>
-        <div class="rechts">
-     <img src="/frontend/photos/Profilbild.jpg" width="70px" height="70px" align="right">
+        <div class="kontakte">
+            <a class="headerlink" href="../Kontaktpage/Kontakte.html">
+                Kontakte
+            </a>
+        </div>
+
+        <div class="name"> <!--DYNAMISCHER LINK ÜBER SESSION TOKEN-->
+            <a class="headerlink" href="../profilepages/Profil.html">
+                Profil
+            </a>
+        </div>
+        <div class="admin"> <!--DIV FÜR ADMIN-->
+
         </div>
     </div>
-   <hr>
+    <div class="right"> <!--PFP MUSS HIER NOCH REINGEDROPT WERDEN-->
+        <img src="/frontend/photos/Profilbild.jpg">
+    </div>
 </header>
-<body  style="font-family: Arial;">
+
+<body style="font-family: Arial;">
     <h1 style="text-align:center">Workshop ...</h1>
     <div>
-   <br>
+        <br>
         <div style="width: 40%; float:right;">
-            <img src="https://fabmobil.org/wp-content/uploads/techcycles_header-1.png" style="width: 500px"; style="height: 500px"; align="right">
-        </div>   
-        <div style="width: 40%; float:left; overflow-wrap: break-word;"> 
-        <!---Beispiel für ein Bild--->   
-            <p align="left"><b>Beschreibung:</b> z.B hier muss ein Text hin ... xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+            <img src="https://fabmobil.org/wp-content/uploads/techcycles_header-1.png" style="width: 500px" ;
+                style="height: 500px" ; align="right">
+        </div>
+        <div style="width: 40%; float:left; overflow-wrap: break-word;">
+            <!---Beispiel für ein Bild--->
+            <p align="left"><b>Beschreibung:</b> z.B hier muss ein Text hin ...
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            </p>
             <p align="left"><b>Dauer:</b> z.B. 3 Tage a 3-6 Stunden </p>
             <p align="left"><b>Mindestalter:</b> z.B. ab 8.Klasse </p>
             <p align="left"><b>Level:</b> z.B. Anfänger-Fortgeschrittene</p>
@@ -58,10 +67,11 @@
                     <a href="">...</a>
                 </div>
             </div>
-        </div>    
-     </div>
+        </div>
+    </div>
 
-    
-    
-    </body>
+
+
+</body>
+
 </html>
