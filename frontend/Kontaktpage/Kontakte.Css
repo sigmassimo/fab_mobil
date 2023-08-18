@@ -22,7 +22,10 @@
 }
 summary{
     color: #005d56;
+    font-size: 20px;
+    font-weight: bold;
 }
 p{
     color: #005d56;
+    font-size: 16px;
 }
