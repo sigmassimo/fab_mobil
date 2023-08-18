@@ -36,47 +36,52 @@
         </div>
     </div>
     <div class="right"> <!--PFP MUSS HIER NOCH REINGEDROPT WERDEN-->
-        <img src="/frontend/photos/Profilbild.jpg">
+        <img src="/photos/Profilbild.jpg">
     </div>
 
 </header>
 <!--wenn geöffnet, dann bereits mit Informationen aus Datenbank ausfüllen-->
 
 <body>
-    <br><br>
-    <table>
-        <tr>
-            <th><img src="../photos/Profilbild.jpg" style="width: 140px;"></th>
-        </tr>
-    </table>
+    <img id="bild" src="../photos/Profilbild.jpg">
 
     <br>
-    <div class="grid-container">
+    <!-- ich räume mal kurz auf -->
+    <form class="bodytext grid-container" id="formular" action="/api/updateuser.php" method="post">
         <div class="grid-item"><b>Anrede:</b></div>
-        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="anrede"></div>
+        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="anrede" name="anrede">
+        </div>
         <div class="grid-item"><b>Name:</b></div>
-        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="lastname"></div>
+        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="lastname" name="lastname">
+        </div>
         <div class="grid-item"><b>Vorname:</b></div>
-        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="firstname"></div>
+        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="firstname" name="firstname">
+        </div>
         <div class="grid-item"><b>Unternehmen:</b></div>
-        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="unternehmen"></div>
+        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="unternehmen"
+                name="unternehmen"></div>
         <div class="grid-item"><b>Job:</b></div>
-        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="stellenname"></div>
+        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="stellenname"
+                name="stellenname"></div>
         <div class="grid-item"><b>E-Mail:</b></div>
-        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="email"></div>
+        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="email" name="email">
+        </div>
         <div class="grid-item"><b>Telefon:</b></div>
-        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="tel_number"></div>
+        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="tel_number"
+                name="tel_number"></div>
         <div class="grid-item"><b>Beschreibung:</b></div>
-        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="beschreibung"></div>
-    </div>
-    </div>
+        <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="beschreibung"
+                name="beschreibung"></div>
+        <button name="test" value="1">DB Test button</button>
+
+    </form>
     <br>
 
     <a href="Profil.html">
-    <button  id="buttonbearbeiten">
+        <button id="buttonbearbeiten">
             Speichern
-    </button>
+        </button>
 
-    <script src="./Profil_bearbeiten.js"></script>
+        <script src="./Profil_bearbeiten.js"></script>
     </a>
 </body>

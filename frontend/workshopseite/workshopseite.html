@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <header>
         <div class="left">
             <!--<div class="logo">
@@ -39,7 +40,7 @@
             </div>
         </div>
         <div class="right"> <!--PFP MUSS HIER NOCH REINGEDROPT WERDEN-->
-            <img src="/frontend/photos/Profilbild.jpg">
+            <img src="/photos/Profilbild.jpg">
         </div>
     </header>
     <div class="container"><!--ALLES MIT DUMMYS POPULIERT-->
@@ -54,38 +55,46 @@
                 <div> Beschreibung:</div>
             </div>
             <div class="Workshopinfo"><!--CONTAINER FÜR WORKSHOPINFO-->
-                <div>01.01.2000</div>
+                <div>15.08.2023</div>
                 <div>Dresden</div>
-                <div>00:00</div>
-                <div>00:00</div>
-                <div>Lorem ipsum dolor</div>
-                <div> Lorem ipsum dolor sit, amet consectetur adipisicing elit. </div>
+                <div>12:00:00</div>
+                <div>06:00</div>
+                <div>Kristall ziehen </div>
+                <div> Es wird das Konzept des Kristall ziehens vorgestellt</div>
             </div>
         </div>
         <div class="participants">
             <div>Moderator:in</div>
             <div class="participant"><!--CONTAINER FÜR TEILNEHMER-->
-                <div>Max Mustermann</div>
-                <div>Maria Mustermann</div>
+                <div>Jens Beyer</div>
+                <div>Sebstian Piatza</div>
             </div>
         </div>
         <div class="buttons">
+        
             <div class="buchen"> <!--CONTAINER; ECHTER BUTTON MUSS DYNAMISCH SEIN(SESSION TOKEN)-->
+            <form action="/api/insert_teilnehmer.php" method="get">
                 <button type="submit" value="submit">Buchen</button>
+                <input type="hidden" id="veranstaltungs_id" name="veranstaltungs_id" value="1"><br>
+                </form>
             </div>
             <div class="buchendel"><!--CONTAINER; DELETE BUCHUNG IF GEBUCHT-->
+                <form action="/api/delete_teilnehmer.php" method="get">
                 <button id="zurueckbutton" type="submit" value="submit">Buchung zurücknehmen</button>
+                <input type="hidden" id="veranstaltungs_id" name="veranstaltungs_id" value="1"><br>
+            </form>
             </div>
             <div class="eventdel"><!--CONTAINER; DELETE EVENT(ADMIN; KOORDINATOR)-->
-                <button id="eventloeschen" type="submit" value="submit">Event löschen</button>
+                <button id="eventloeschen" onclick="delVer()" type="submit" value="submit">Event löschen</button>
             </div>
         </div>
     </div>
-    
+
     <script>
         const params = new URLSearchParams(location.search);
         document.querySelector("h1").innerText = `Workshop ID ${params.get("id")}`;
     </script>
+    <script src="./Workshopprofile.js"></script>
 </body>
 
 </html>
