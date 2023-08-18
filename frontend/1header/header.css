@@ -112,4 +112,9 @@ button{
         padding: 14px 40px;
         font-size: 17px;
         margin-left: 5%;
+
+}
+button:hover{
+    background-color: #005d56;
+    color: #b5d334;
 }
