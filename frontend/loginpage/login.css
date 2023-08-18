@@ -30,6 +30,7 @@ p{
 label{
     display: table-cell;
     font-weight: bold;
+    margin-top: 7px;
 
 }
 input{
@@ -37,6 +38,7 @@ input{
     display: table-cell;
     height: 22px;
     font-weight: bold;
+    margin-top: 7px;
 }
 button{
     text-align: center;
