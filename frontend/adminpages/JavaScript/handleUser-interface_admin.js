@@ -59,9 +59,6 @@ function loadUserList(){
                     box_tr.appendChild(box_td_name);
                     box_tr.appendChild(box_td_edit);
                     box_tr.appendChild(box_td_delete);
-
-                    //giving the deleteUser function to the delete button with eventListener and onClick
-
                 };
         } else {    
             console.log("Die Liste enthält kein Elemente, was bedeutet, dass es keine User gibt!");
@@ -71,11 +68,8 @@ function loadUserList(){
 
 loadUserList();
 
-let deleteButtons = document.getElementsByClassName("deleteButtons");
-deleteButtons.addEventListener("click", deleteUser());
 
 function deleteUser(){
-    console.log("test");
     fetch("http://localhost/api/php_ausgabe/Nutzerdaten.php")
         .then((response) => response.json())
         .then((data) => {
@@ -152,6 +146,16 @@ function deleteUser(){
 }})};
 
 
+let deleteButtons = document.getElementsByClassName("deleteButtons");
+for (var i = 0 ; i < deleteButtons.length; i++) {
+    if (deleteButtons.includes(deleteButtons[i])){
+        deleteButtons[i].addEventListener('click' , deleteUser , false ) ;
+    } else{
+        console.log("Fehler");
+    } ;
+};
+
+
 function editUser(){
     // gets the selected User(-name), and gets all the data corresponding to the user through the database 
 
@@ -168,41 +172,38 @@ function editUser(){
         return editButton, selectedUser, selectedUser_Name
     };
 
-    for (let button of buttons){
-        button.addEventListener("click", buttonPressed);
-    };
+    // for (let button of buttons){
+    //     button.addEventListener("click", buttonPressed);
+    // };
 
     // get all the data from the user and put it on the html page, so that the admin can edit the profile
-    const uniqueString_Name_User = selectedUser_Name;
+    // const uniqueString_Name_User = selectedUser_Name;
     
-    const query = 'SELECT * FROM Nutzerdaten WHERE unique_column = ?';
-    connection.query(query, [uniqueString], (error, results, fields) => {
-        if (error) {
-          console.error('Error:', error);
-          return;
-        };
+    // const query = 'SELECT * FROM Nutzerdaten WHERE unique_column = ?';
+    // connection.query(query, [uniqueString], (error, results, fields) => {
+    //     if (error) {
+    //       console.error('Error:', error);
+    //       return;
+    //     };
 
-        if (results.length > 0) {
-            const selectedRow = results[0];
-            return selectedRow;          
-        } else {
-            return;
-    }});
+    //     if (results.length > 0) {
+    //         const selectedRow = results[0];
+    //         return selectedRow;          
+    //     } else {
+    //         return;
+    // }});
 
-    // get the data from the created bject from the db and put it inside some variables
-    let user_id = selectedRow(id);
-    let user_name = selectedRow(name);
-    let user_age = selectedRow(age);
-    let user_job = selectedRow(job);
-    let user_email = selectedRow(email);
-    let user_tel = selectedRow(telephone);
-    let user_salutation = selectedRow(salutation);
-    let user_company = selectedRow(company);
+    // // get the data from the created bject from the db and put it inside some variables
+    // let user_id = selectedRow(id);
+    // let user_name = selectedRow(name);
+    // let user_age = selectedRow(age);
+    // let user_job = selectedRow(job);
+    // let user_email = selectedRow(email);
+    // let user_tel = selectedRow(telephone);
+    // let user_salutation = selectedRow(salutation);
+    // let user_company = selectedRow(company);
 
 };
 
-let deleteButton = document.getElementsByClassName("box_td_edit");
-let editButton = document.getElementsByClassName("box_td_delete");
-
-deleteButton.addEventListener("click", deleteUser)
-editButton.addEventListener("click", editUser);
+// let deleteButton = document.getElementsByClassName("box_td_edit");
+// editButton.addEventListener("click", editUser);

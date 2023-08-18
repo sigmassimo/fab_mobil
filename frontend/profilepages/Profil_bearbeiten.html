@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil</title>
     <link rel="stylesheet" href="../1header/header.css">
-    <link rel="stylesheet" href="profil.css">
+    <link rel="stylesheet" href="Profil.css">
 </head>
 <header>
     <div class="left">
@@ -42,7 +42,9 @@
 <!--wenn geöffnet, dann bereits mit Informationen aus Datenbank ausfüllen-->
 
 <body>
+        <img id="bild" src="../photos/Profilbild.jpg">
     <br><br>
+    <h1>Profil bearbeiten</h1>
     <table>
         <tr>
             <th><img src="../photos/Profilbild.jpg" style="width: 140px;"></th>
@@ -50,6 +52,7 @@
     </table>
      
         <br>
+        <div class="bodytext">
     <div class="grid-container">
         <div class="grid-item"><b>Anrede:</b></div>
         <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px"></div>
@@ -68,8 +71,9 @@
         <div class="grid-item"><b>Beschreibung:</b></div>
         <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px"></div>
     </div>
+    </div>
     <br>
-    <button>
+    <button  id="buttonbearbeiten">
         <a href="Profil.html">
             Speichern
         </a>
