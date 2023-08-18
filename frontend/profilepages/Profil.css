@@ -1,56 +1,3 @@
-header {
-    background-color: #b5d334;
-    height: 70px;
-}
-.headerlink:link{
-    color: #a9112c;
-}
-.headerlink:visited{
-    color: #a9112c;
-}
-.headerlink:active{
-    color: #a9112c;
-}
-.headerlink{
-    letter-spacing:1px
-}
-.headerlink{
-    font-size: 100%
-}
-.headerlink:link{
-    text-decoration: none;
-}
-.headerlink:hover{
-    color: #ed1b34
-}
-
-.links{
-    float: left;
-    width: 23%;
-}
-.kalender{
-    margin-left: 3%;
-    margin-top: 2%;
-    float: left;
-    width: 20%;
-}
-.kontakte{
-    float: left;
-    margin-top: 2%;
-    width: 20%;
-}
-.name{
-    margin-right: -5%;
-    margin-top: 2%;
-    float: left;
-    width: 20%;
-}
-.rechts{
-    float: right;
-}
-
-
-
 .grid-container {
   display: grid;
   grid-template-columns: auto 1050px;
@@ -80,4 +27,18 @@ body{
     color: #005d56;
     padding: 14px 40px;
     font-size: 17px;
+}
+a:link {
+    color: #005d56;
+}
+
+a:visited {
+    color: #005d56;
+}
+
+a:active {
+    color: #005d56;
+}
+a:link {
+    text-decoration: none;
 }
