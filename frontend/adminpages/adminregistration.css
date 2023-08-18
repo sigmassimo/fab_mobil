@@ -1,7 +1,14 @@
 .form-body {
-    margin-left: 25px;
+    margin-left: 5%;
 }
-
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
 .h1 {
-    margin-left: 25px;
+    margin-left: 5%;
+}
+p{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
 }
