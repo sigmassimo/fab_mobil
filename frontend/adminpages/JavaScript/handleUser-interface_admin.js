@@ -145,9 +145,14 @@ function deleteUser(){
                 return;
 }})};
 
+
 let deleteButtons = document.getElementsByClassName("deleteButtons");
 for (var i = 0 ; i < deleteButtons.length; i++) {
-    deleteButtons[i].addEventListener('click' , deleteUser , false ) ; 
+    if (deleteButtons.includes(deleteButtons[i])){
+        deleteButtons[i].addEventListener('click' , deleteUser , false ) ;
+    } else{
+        console.log("Fehler");
+    } ;
 };
 
 
@@ -200,8 +205,5 @@ function editUser(){
 
 };
 
-let deleteButton = document.getElementsByClassName("box_td_edit");
-let editButton = document.getElementsByClassName("box_td_delete");
-
-deleteButton.addEventListener("click", deleteUser)
-editButton.addEventListener("click", editUser);
+// let deleteButton = document.getElementsByClassName("box_td_edit");
+// editButton.addEventListener("click", editUser);
