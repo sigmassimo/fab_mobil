@@ -13,7 +13,10 @@ function adminregistration(){
     // let pic_input_image = document.getElementById("pic").value;
     let password_input_text = document.getElementById("password");
 
+    //hashing password to POST it encoded to the db
+    var SHA256 =  new Hashes.SHA256;
+    var hashedpassword = SHA256(password_input_text);
 
-
+    
 
 };
