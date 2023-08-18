@@ -38,9 +38,11 @@ function loadUserList(){
                     box_td_name.setAttribute("class", "box_td_name");
                     box_td_edit.setAttribute("id", "cell_2_user_" + i);
                     box_td_edit_button.setAttribute("id", "editButton" + i);
+                    box_td_edit_button.setAttribute("class", "editButtons");
                     box_td_edit.setAttribute("class", "box_td_edit");
                     box_td_delete.setAttribute("id", "cell_3_user_" + i);
                     box_td_delete_button.setAttribute("id", "deleteButton" + i);
+                    box_td_delete_button.setAttribute("class", "deleteButtons");
                     box_td_delete.setAttribute("class", "box_td_delete");
 
                     //set classes for css team to style the table 
@@ -58,6 +60,8 @@ function loadUserList(){
                     box_tr.appendChild(box_td_edit);
                     box_tr.appendChild(box_td_delete);
 
+                    //giving the deleteUser function to the delete button with eventListener and onClick
+
                 };
         } else {    
             console.log("Die Liste enthält kein Elemente, was bedeutet, dass es keine User gibt!");
@@ -67,8 +71,11 @@ function loadUserList(){
 
 loadUserList();
 
+let deleteButtons = document.getElementsByClassName("deleteButtons");
+deleteButtons.addEventListener("click", deleteUser());
 
 function deleteUser(){
+    console.log("test");
     fetch("http://localhost/api/php_ausgabe/Nutzerdaten.php")
         .then((response) => response.json())
         .then((data) => {
@@ -94,10 +101,11 @@ function deleteUser(){
 
                     console.log('Clicked button ID:', clickedButton.getAttribute('data-id'));
                     console.log('Containing row:', row);
+                    return row
                 
             })});
 
-            
+            //checking if user exists
             if (username in username_list){
                 const td_elements = document.getElementsByTagName("td");
                 const buttons = document.getElementsByTagName("button");
@@ -115,7 +123,25 @@ function deleteUser(){
                     button.addEventListener("click", buttonPressed);
                 };
 
+                //deleting database data about the user 
+                let baseURL = "http://localhost/api/php_ausgabe/delete.php";
+
+                let type = "Nutzerdaten";
+                let id = lastDigit;
+
+                let fullURL = "${baseURL}?type=§{encodeURIComponent(type)&id=${encodeURIComponent(id)}}";
+
+                fetch(fullURL)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                    })
+                    .catch(error => {
+                        console.error('Fehler beim Abrufen der Daten:', error);
+                    });
+
                 // delets all the data (the whole row) 
+                selectedRow = row
                 document.getElementById(selectedRow).remove();
                 console.log(selectedUser + " was deleted!");
                 console.log(username + "`s box was deleted from the username list!");
