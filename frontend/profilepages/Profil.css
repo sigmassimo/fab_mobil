@@ -53,7 +53,7 @@ header {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 1050px;
  
   padding: 10px;
 }
@@ -62,6 +62,10 @@ header {
   padding: 5px;
   font-size: 20px;
   text-align: left;
+}
+
+.grid_body{
+    max-width:10px;
 }
 
 body{
