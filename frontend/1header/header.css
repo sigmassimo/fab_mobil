@@ -104,3 +104,12 @@ header a:hover {
     height: 64px;
     width: 64px;
 }
+
+button{
+        background-color: #b5d334;
+        border: #005d56;
+        color: #005d56;
+        padding: 14px 40px;
+        font-size: 17px;
+        margin-left: 5%;
+}
