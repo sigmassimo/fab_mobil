@@ -10,7 +10,6 @@ $passwort=$_GET["passwort"];
 //hash password
 $passwort = hash('sha256', $passwort);
 
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -22,13 +21,15 @@ $sql = "SELECT user_id FROM Nutzerdaten WHERE email = '$email' AND passwort = '$
 
 $result = $conn->query($sql);
 if ($result->num_rows == 0) {
+  
     header("Location: /loginpage/Anmeldung.html");
-} 
-else {
-
+} else {
     session_start();
-    $_SESSION['user_id']= //*user id die in $sql=..... selcetiert wird */;
-    header("Location: /Kalenderpage/Kalender3.html");
+    while($row = $result->fetch_assoc()) {
+      $_SESSION['user_id']= $result->fetch_assoc()["user_id"];  //*user id die in $sql=..... selcetiert wird */;
+      header("Location: /Kalenderpage/kalender4.html");
+      die();
+    }
 }
 $conn->close();
 ?>
