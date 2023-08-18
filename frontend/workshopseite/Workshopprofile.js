@@ -1,24 +1,7 @@
-const TermineContainer = document.querySelector(".workshop");    
-
-async function getDates(){
-    const req = await fetch("/api/php_ausgabe/Veranstaltungen.php");
-    const data = await req.json();
-
-
-    
-        TermineContainer.innerHTML = 
-        `<a href="moin.html">
-            <div class="box">
-                <div class="column">
-                    <div id="location" class="location">Ort: ${entry.ort}</div>
-                    <div id="workshop" class="workshop">WS: ${entry.spezialisierung} </div>
-                </div>
-                <div class="column">
-                    <div class="dateandtime" id="dateandtime">${entry.datum}, ${entry.start_zeit}</div>
-                </div>
-            </div>
-        </a>`;
-    
+async function delVer(){
+    let params = new URLSearchParams(document.location.search);
+    let id = params.get("id");
+const request = await fetch("/api/delveranstaltung.php?id="+id);
+window.open("/Kalenderpage/kalender4.html", "_self")
+const data = await request
 }
-
-getDates();
