@@ -1,4 +1,6 @@
 TODO
+MOST IMPORTANT
+    SESSION TOKENS
 Dynamische Links:
     Profilpage in header
     Adminbereich
@@ -16,3 +18,4 @@ Informationen aus Datenbank ziehen
     WORKSHOPs in Kalender --
     WORKSHOPprofilseiten
     USERdata Kontakte
+
