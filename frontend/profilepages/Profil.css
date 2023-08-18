@@ -1,7 +1,6 @@
 .grid-container {
   display: grid;
-  grid-template-columns: auto 1050px;
- 
+  grid-template-columns: 160px auto;
   padding: 10px;
 }
 
@@ -16,6 +15,7 @@
 
 body{
     font-family: Arial;
+    color: #005d56;
 
 }
 
@@ -27,7 +27,7 @@ body{
     color: #005d56;
     padding: 14px 40px;
     font-size: 17px;
-    margin-left: 44.9%;
+    margin-left: 5%;
 }
 a:link {
     color: #005d56;
@@ -44,12 +44,12 @@ a:link {
     text-decoration: none;
 }
 .bodytext{
-    margin-left: 44.9%;
+    margin-left: 5%;
     margin-top: 2%;
 }
 #bild{
     width: 140px;
-    margin-left: 44.9%;
+    margin-left: 5%;
     margin-bottom: 2%;
     margin-top: 4%;
 }

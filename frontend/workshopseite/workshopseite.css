@@ -7,7 +7,7 @@ h1 {
 }
 
 .infos {
-    width: 65%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     margin-left: 3%;
@@ -26,6 +26,8 @@ h1 {
 .workshopinfo {
     display: flex;
     flex-direction: column;
+    
+    
 }
 
 .participants {
@@ -51,8 +53,6 @@ h1 {
     margin-left: 3%;
     justify-content: space-between;
 }
-
-button {
-    background-color: #999;
-    color: white;
+#eventloeschen {
+    margin-left: 15px;
 }

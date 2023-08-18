@@ -1,0 +1,21 @@
+TODO
+MOST IMPORTANT
+    SESSION TOKENS
+Dynamische Links:
+    Profilpage in header
+    Adminbereich
+    Deletelink und Bearbeiten in admin
+    Workshops in Kalender
+Informationen in Datenbank hinzufügen
+    Workshop erstellen
+    Profilbearbeiten Admin
+    Profilbearbeiten USer 
+    Neuen User anlegen
+Informationen aus Datenbank ziehen
+    PFP in header
+    USERinfo in Profil
+    USERname in Admin --
+    WORKSHOPs in Kalender --
+    WORKSHOPprofilseiten
+    USERdata Kontakte
+

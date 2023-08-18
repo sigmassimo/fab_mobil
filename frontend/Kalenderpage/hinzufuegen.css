@@ -1,3 +1,4 @@
+
 .alles {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -35,7 +36,7 @@
 }
 .buttons {
     width: 65%;
-    margin-left: 3%;
+    margin-left: 10px;
     justify-content: space-between;
     
     
@@ -46,4 +47,7 @@
 }
 #abbrechenbutton {
     margin-left: 5px;
+}
+#hinzufuegenbutton {
+    margin-left: 20px;
 }

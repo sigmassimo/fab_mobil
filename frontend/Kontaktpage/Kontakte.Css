@@ -1,12 +1,13 @@
 .bild{
     float: left;
-    width: 10%
+    width: 20%
 
 }
 
 .text{
     float: left;
-    margin-top: 3%;
+    margin-top: 5.5%;
+    font-family: Arial;
 }
 
 .kontakt{
@@ -15,13 +16,16 @@
 
 .kontaktbild{
     border-radius: 100px;
-    padding: 4px; 
+    padding: 30px; 
     width: 100px;
     height: 100px; 
 }
 summary{
     color: #005d56;
+    font-size: 20px;
+    font-weight: bold;
 }
 p{
     color: #005d56;
+    font-size: 16px;
 }
