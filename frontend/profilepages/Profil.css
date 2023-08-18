@@ -27,6 +27,7 @@ body{
     color: #005d56;
     padding: 14px 40px;
     font-size: 17px;
+    margin-left: 44.9%;
 }
 a:link {
     color: #005d56;
@@ -41,4 +42,14 @@ a:active {
 }
 a:link {
     text-decoration: none;
+}
+.bodytext{
+    margin-left: 44.9%;
+    margin-top: 2%;
+}
+#bild{
+    width: 140px;
+    margin-left: 44.9%;
+    margin-bottom: 2%;
+    margin-top: 4%;
 }
