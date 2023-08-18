@@ -1,7 +1,7 @@
 
 
 function loadUserList(){
-    let firstnameList = []
+    let firstnameList = [];
     fetch("http://localhost/api/php_ausgabe/Nutzerdaten.php")
         .then((response) => response.json())
         .then((data) => {
@@ -38,11 +38,11 @@ function loadUserList(){
                     box_td_name.setAttribute("class", "box_td_name");
                     box_td_edit.setAttribute("id", "cell_2_user_" + i);
                     box_td_edit_button.setAttribute("id", "editButton" + i);
-                    box_td_edit_button.setAttribute("class", "editButtons");
+                    box_td_edit_button.setAttribute("class", "editButton");
                     box_td_edit.setAttribute("class", "box_td_edit");
                     box_td_delete.setAttribute("id", "cell_3_user_" + i);
                     box_td_delete_button.setAttribute("id", "deleteButton" + i);
-                    box_td_delete_button.setAttribute("class", "deleteButtons");
+                    box_td_delete_button.setAttribute("class", "deleteButton");
                     box_td_delete.setAttribute("class", "box_td_delete");
 
                     //set classes for css team to style the table 
@@ -60,16 +60,33 @@ function loadUserList(){
                     box_tr.appendChild(box_td_edit);
                     box_tr.appendChild(box_td_delete);
                 };
+
+                //function um alle auf alle Buttons, die zum löschendes Users da sind, die deleteUser function drauf zu packen
+                    let deleteButtons = document.getElementsByClassName("deleteButton");
+                    if (deleteButtons.length !== 0){
+                        for (var i = 0 ; i < deleteButtons.length; i++) {
+                            if (deleteButtons[i] !== null){
+                                deleteButtons[i].addEventListener('click', deleteUser);
+                            } else{
+                                console.log("Fehler");
+                            }
+                        }
+                    } else {
+                        console.log("Fehler! Es wurden keine Button mit dem Classname deleteButton gefunden!");
+                    };
+
         } else {    
             console.log("Die Liste enthält kein Elemente, was bedeutet, dass es keine User gibt!");
-        
-        }})};
+    console.log("test");
+}})};
 
 
 loadUserList();
 
 
 function deleteUser(){
+    let firstnameList = [];
+    console.log("Clicked Button to delete User")
     fetch("http://localhost/api/php_ausgabe/Nutzerdaten.php")
         .then((response) => response.json())
         .then((data) => {
@@ -86,92 +103,79 @@ function deleteUser(){
             // let user_box = document.getElementsByClassName("box_td_name");
             // if (user_box.innerHTML == "")
 
-            const buttons = document.querySelectorAll('box_td_delete');
+            let buttons_delete = document.getElementsByClassName('cell_3_user');
+            
+            for (i = 0; i < buttons_delete.length -1; i++){
+                test = buttons_delete[i]
+                buttons_delete[i].addEventListener('click', event => {
+                        const clickedButton = event.target; // Der geklickte Button
+                        const row = clickedButton.closest('tr'); // Die übergeordnete Zeile (Row)
 
-            buttons.forEach(button => {
-                button.addEventListener('click', event => {
-                    const clickedButton = event.target; // Der geklickte Button
-                    const row = clickedButton.closest('tr'); // Die übergeordnete Zeile (Row)
-
-                    console.log('Clicked button ID:', clickedButton.getAttribute('data-id'));
-                    console.log('Containing row:', row);
-                    return row
-                
-            })});
+                        console.log('Clicked button ID:', clickedButton.getAttribute('data-id'));
+                        console.log('Containing row:', row);
+                        return row
+                    
+            })};
 
             //checking if user exists
-            if (username in username_list){
-                const td_elements = document.getElementsByTagName("td");
-                const buttons = document.getElementsByTagName("button");
-                const buttonPressed = e => {
-                    let deleteButton = document.getElementById(e.target.id);
-                    let deleteButtonText = document.getElementById(e.target.id).innerHTML;
+            const td_elements = document.getElementsByTagName("td");
+            const buttons = document.getElementsByTagName("button");
+            const buttonPressed = e => {
+                let deleteButton = document.getElementById(e.target.id);
+                let deleteButtonText = document.getElementById(e.target.id).innerHTML;
 
-                    let lastDigit = deleteButtonText.charAt(deleteButtonText.length - 1);
-                    let selectedUser = document.getElementById("cell_1_user_" + lastDigit);
+                let lastDigit = deleteButtonText.charAt(deleteButtonText.length - 1);
+                let selectedUser = document.getElementById("cell_1_user_" + lastDigit);
+                return deleteButton, selectedUser;
+            };
 
-                    return deleteButton, selectedUser;
-                };
+            for (let button of buttons){
+                button.addEventListener("click", buttonPressed);
+            };
 
-                for (let button of buttons){
-                    button.addEventListener("click", buttonPressed);
-                };
+            //deleting database data about the user 
+        
+            console.log("Der User wurde in der Datenbank gefunden!")
+            let baseURL = "http://localhost/api/php_ausgabe/delete.php";
 
-                //deleting database data about the user 
-                let baseURL = "http://localhost/api/php_ausgabe/delete.php";
+            let type = "Nutzerdaten";
+            let id = lastDigit;
 
-                let type = "Nutzerdaten";
-                let id = lastDigit;
+            let fullURL = "${baseURL}?type=§{encodeURIComponent(type)&id=${encodeURIComponent(id)}}";
 
-                let fullURL = "${baseURL}?type=§{encodeURIComponent(type)&id=${encodeURIComponent(id)}}";
+            fetch(fullURL)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error('Fehler beim Abrufen der Daten:', error);
+                });
 
-                fetch(fullURL)
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log(data);
-                    })
-                    .catch(error => {
-                        console.error('Fehler beim Abrufen der Daten:', error);
-                    });
+            // delets all the data (the whole row) 
+            selectedRow = row
+            document.getElementById(selectedRow).remove();
+            console.log(selectedUser + " was deleted!");
+            console.log(username + "`s box was deleted from the username list!");
 
-                // delets all the data (the whole row) 
-                selectedRow = row
-                document.getElementById(selectedRow).remove();
-                console.log(selectedUser + " was deleted!");
-                console.log(username + "`s box was deleted from the username list!");
-
-            } else {
-                console.log(username + "doesn` exist in the user database! Maybe the user ist deleted aleady.");
-                return;
-}})};
+            })};
 
 
-let deleteButtons = document.getElementsByClassName("deleteButtons");
-for (var i = 0 ; i < deleteButtons.length; i++) {
-    if (deleteButtons.includes(deleteButtons[i])){
-        deleteButtons[i].addEventListener('click' , deleteUser , false ) ;
-    } else{
-        console.log("Fehler");
-    } ;
-};
+    function editUser(){
+        // gets the selected User(-name), and gets all the data corresponding to the user through the database 
 
+        const td_elements = document.getElementsByTagName("td");
+        const buttons = document.getElementsByTagName("button");
+        const buttonPressed = e => {
+            let editButton = document.getElementById(e.target.id);
+            let deleteButtonText = document.getElementById(e.target.id).innerHTML;
 
-function editUser(){
-    // gets the selected User(-name), and gets all the data corresponding to the user through the database 
+            let lastDigit = deleteButtonText.charAt(deleteButtonText.length - 1);
+            let selectedUser = document.getElementById("cell_1_user_" + lastDigit);
+            let selectedUser_Name = selectedUser.innerHTML;
 
-    const td_elements = document.getElementsByTagName("td");
-    const buttons = document.getElementsByTagName("button");
-    const buttonPressed = e => {
-        let editButton = document.getElementById(e.target.id);
-        let deleteButtonText = document.getElementById(e.target.id).innerHTML;
-
-        let lastDigit = deleteButtonText.charAt(deleteButtonText.length - 1);
-        let selectedUser = document.getElementById("cell_1_user_" + lastDigit);
-        let selectedUser_Name = selectedUser.innerHTML;
-
-        return editButton, selectedUser, selectedUser_Name
-    };
-
+            return editButton, selectedUser, selectedUser_Name
+        };
     // for (let button of buttons){
     //     button.addEventListener("click", buttonPressed);
     // };
@@ -207,3 +211,5 @@ function editUser(){
 
 // let deleteButton = document.getElementsByClassName("box_td_edit");
 // editButton.addEventListener("click", editUser);
+
+
