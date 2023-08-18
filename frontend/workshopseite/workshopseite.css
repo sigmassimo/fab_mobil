@@ -7,7 +7,7 @@ h1 {
 }
 
 .infos {
-    width: 65%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     margin-left: 3%;
@@ -26,6 +26,8 @@ h1 {
 .workshopinfo {
     display: flex;
     flex-direction: column;
+    
+    
 }
 
 .participants {
@@ -47,8 +49,13 @@ h1 {
 
 .buttons {
     display: flex;
+    flex-direction: column;
     width: 65%;
-    margin-left: 3%;
+    
     justify-content: space-between;
+    align-content:left;
+    
 }
-
+.buttons div {
+    margin-bottom: 15px;
+}
