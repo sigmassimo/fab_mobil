@@ -49,10 +49,13 @@ h1 {
 
 .buttons {
     display: flex;
+    flex-direction: column;
     width: 65%;
-    margin-left: 3%;
+    
     justify-content: space-between;
+    align-content:left;
+    
 }
-#eventloeschen {
-    margin-left: 15px;
+.buttons div {
+    margin-bottom: 15px;
 }
