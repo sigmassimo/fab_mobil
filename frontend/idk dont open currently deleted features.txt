@@ -29,3 +29,5 @@ CSSButton
     margin: 4px 2px;
     cursor: pointer;
   }
+  DB Workshop
+  Starzeit|Datum|Spezialisierung|Ort|Endzeit

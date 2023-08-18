@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FabBook: Anmeldung</title>
     <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
     <!-- Name FabBook-->
-   
-        
+
+
     <div class="header">
         <h1>Willkommen bei FabBook</h1>
-        
+
     </div>
     <br>
     <div class="center">
-    <form action="/api/Anmeldung.php">
-        <p>
-        <label>
-            E-Mail:
-        </label>
-        <input type="email" id="email" name="email" placeholder="beispiel@email.com" required>
-        </p>
-        <p class="a">
-        <label>
-            Passwort:
-        </label>
-        <input type="password" id="Passwort" name="passwort" required>
-        </p>
-        <form method="get" target="_blank">
-            <button type="submit" onclick="userLogin()">Anmelden</button>
-          </form>
-    </form>
-    
+        <form action="/api/Anmeldung.php">
+            <p>
+                <label>
+                    E-Mail:
+                </label>
+                <input type="email" id="email" name="email" placeholder="beispiel@email.com" required>
+            </p>
+            <p class="a">
+                <label>
+                    Passwort:
+                </label>
+                <input type="password" id="Passwort" name="passwort" required>
+            </p>
+            <form method="get" target="_blank">
+                <button type="submit" onclick="userLogin()">Anmelden</button>
+            </form>
+        </form>
+
     </div>
-    
-    
+
+
 </body>
+
 </html>

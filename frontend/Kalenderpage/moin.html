@@ -1,12 +1,10 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="../1header/header.css">
+
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil</title>
-    <link rel="stylesheet" href="../1header/header.css">
-</head>
-<header>
+  <header>
     <div class="left">
         <!--<div class="logo">
             FabBook
@@ -38,27 +36,39 @@
         <img src="/frontend/photos/Profilbild.jpg">
     </div>
 </header>
+  <style>
+    .box {
+      border: 1px solid #000;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item {
+      margin: 5px;
+    }
+  </style>
+</head>
 
 <body>
-    <br><br>
-    <table>
-        <tr>
-            <th><img src="/frontend/photos/Profilbild.jpg" style="width: 140px;"></th>
-        </tr>
-    </table>
-    <br>
-    <p><b>Anrede:</b>XXX</p>
-    <p><b>Name:</b>XXX</p>
-    <p><b>Vorname:</b>XXX</p>
-    <p><b>Unternehmen:</b>XXX</p>
-    <p><b>Job:</b>XXX</p>
-    <p><b>E-Mail:</b>XXX</p>
-    <p><b>Telefon:</b>XXX</p>
-    <p><b>Beschreibung:</b>XXX</p>
-    <br>
-    <button id="buttonbearbeiten">
-        <a href="Profil_bearbeiten.html">
-            Bearbeiten
-        </a>
-    </button>
+
+  <div class="box">
+    <div class="column">
+      <div class="item" id="location"></div>
+      <div class="item" id="workshop"></div>
+    </div>
+    <div class="column">
+      <div class="item" id="dateandtime"></div>
+      <div class="item"></div>
+    </div>
+  </div>
+
 </body>
+
+</html>
