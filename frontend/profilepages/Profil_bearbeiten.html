@@ -43,16 +43,11 @@
 <!--wenn geöffnet, dann bereits mit Informationen aus Datenbank ausfüllen-->
 
 <body>
-    <br><br>
-    <table>
-        <tr>
-            <th><img src="../photos/Profilbild.jpg" style="width: 140px;"></th>
-        </tr>
-    </table>
+    <img id="bild" src="../photos/Profilbild.jpg">
 
     <br>
     <!-- ich räume mal kurz auf -->
-    <div class="grid-container" action="/api/updateuser.php">
+    <form id="formular" action="/api/updateuser.php" method="post"><br>
         <div class="grid-item"><b>Anrede:</b></div>
         <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="anrede"></div>
         <div class="grid-item"><b>Name:</b></div>
@@ -69,7 +64,8 @@
         <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="tel_number"></div>
         <div class="grid-item"><b>Beschreibung:</b></div>
         <div class="grid-item"><input type="text" size="30px" style="margin-top: -3px" id="beschreibung"></div>
-    </div>
+
+    </form>
     </div>
     <br>
 
