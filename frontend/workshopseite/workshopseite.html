@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <header>
         <div class="left">
             <!--<div class="logo">
@@ -77,15 +78,16 @@
                 <button id="zurueckbutton" type="submit" value="submit">Buchung zurücknehmen</button>
             </div>
             <div class="eventdel"><!--CONTAINER; DELETE EVENT(ADMIN; KOORDINATOR)-->
-                <button id="eventloeschen" type="submit" value="submit">Event löschen</button>
+                <button id="eventloeschen" onclick="delVer()" type="submit" value="submit">Event löschen</button>
             </div>
         </div>
     </div>
-    
+
     <script>
         const params = new URLSearchParams(location.search);
         document.querySelector("h1").innerText = `Workshop ID ${params.get("id")}`;
     </script>
+    <script src="./Workshopprofile.js"></script>
 </body>
 
 </html>
