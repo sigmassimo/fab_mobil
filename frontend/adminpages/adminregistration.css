@@ -1,0 +1,16 @@
+.form-body {
+    margin-left: 5%;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.h1 {
+    margin-left: 5%;
+}
+p{
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    width: 70%
+    
+}
