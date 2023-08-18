@@ -3,7 +3,7 @@ body {
 }
 
 header {
-    background-color: lightgrey;
+    background-color: #b5d334;
     height: 70px;
     display: flex;
     justify-content: space-between;
