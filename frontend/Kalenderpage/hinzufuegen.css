@@ -3,7 +3,8 @@
 }
 .TitelWorkshop {
     color: #005d56;
-    text-align: center;
+    margin-left: 20px;
+    
 }
 .label {
     display:flex;

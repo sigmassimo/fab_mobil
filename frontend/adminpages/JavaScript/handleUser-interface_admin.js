@@ -38,9 +38,11 @@ function loadUserList(){
                     box_td_name.setAttribute("class", "box_td_name");
                     box_td_edit.setAttribute("id", "cell_2_user_" + i);
                     box_td_edit_button.setAttribute("id", "editButton" + i);
+                    box_td_edit_button.setAttribute("class", "editButtons");
                     box_td_edit.setAttribute("class", "box_td_edit");
                     box_td_delete.setAttribute("id", "cell_3_user_" + i);
                     box_td_delete_button.setAttribute("id", "deleteButton" + i);
+                    box_td_delete_button.setAttribute("class", "deleteButtons");
                     box_td_delete.setAttribute("class", "box_td_delete");
 
                     //set classes for css team to style the table 
@@ -57,7 +59,6 @@ function loadUserList(){
                     box_tr.appendChild(box_td_name);
                     box_tr.appendChild(box_td_edit);
                     box_tr.appendChild(box_td_delete);
-
                 };
         } else {    
             console.log("Die Liste enthält kein Elemente, was bedeutet, dass es keine User gibt!");
@@ -94,10 +95,11 @@ function deleteUser(){
 
                     console.log('Clicked button ID:', clickedButton.getAttribute('data-id'));
                     console.log('Containing row:', row);
+                    return row
                 
             })});
 
-            
+            //checking if user exists
             if (username in username_list){
                 const td_elements = document.getElementsByTagName("td");
                 const buttons = document.getElementsByTagName("button");
@@ -115,7 +117,25 @@ function deleteUser(){
                     button.addEventListener("click", buttonPressed);
                 };
 
+                //deleting database data about the user 
+                let baseURL = "http://localhost/api/php_ausgabe/delete.php";
+
+                let type = "Nutzerdaten";
+                let id = lastDigit;
+
+                let fullURL = "${baseURL}?type=§{encodeURIComponent(type)&id=${encodeURIComponent(id)}}";
+
+                fetch(fullURL)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                    })
+                    .catch(error => {
+                        console.error('Fehler beim Abrufen der Daten:', error);
+                    });
+
                 // delets all the data (the whole row) 
+                selectedRow = row
                 document.getElementById(selectedRow).remove();
                 console.log(selectedUser + " was deleted!");
                 console.log(username + "`s box was deleted from the username list!");
@@ -124,6 +144,11 @@ function deleteUser(){
                 console.log(username + "doesn` exist in the user database! Maybe the user ist deleted aleady.");
                 return;
 }})};
+
+let deleteButtons = document.getElementsByClassName("deleteButtons");
+for (var i = 0 ; i < deleteButtons.length; i++) {
+    deleteButtons[i].addEventListener('click' , deleteUser , false ) ; 
+};
 
 
 function editUser(){
@@ -142,36 +167,36 @@ function editUser(){
         return editButton, selectedUser, selectedUser_Name
     };
 
-    for (let button of buttons){
-        button.addEventListener("click", buttonPressed);
-    };
+    // for (let button of buttons){
+    //     button.addEventListener("click", buttonPressed);
+    // };
 
     // get all the data from the user and put it on the html page, so that the admin can edit the profile
-    const uniqueString_Name_User = selectedUser_Name;
+    // const uniqueString_Name_User = selectedUser_Name;
     
-    const query = 'SELECT * FROM Nutzerdaten WHERE unique_column = ?';
-    connection.query(query, [uniqueString], (error, results, fields) => {
-        if (error) {
-          console.error('Error:', error);
-          return;
-        };
+    // const query = 'SELECT * FROM Nutzerdaten WHERE unique_column = ?';
+    // connection.query(query, [uniqueString], (error, results, fields) => {
+    //     if (error) {
+    //       console.error('Error:', error);
+    //       return;
+    //     };
 
-        if (results.length > 0) {
-            const selectedRow = results[0];
-            return selectedRow;          
-        } else {
-            return;
-    }});
+    //     if (results.length > 0) {
+    //         const selectedRow = results[0];
+    //         return selectedRow;          
+    //     } else {
+    //         return;
+    // }});
 
-    // get the data from the created bject from the db and put it inside some variables
-    let user_id = selectedRow(id);
-    let user_name = selectedRow(name);
-    let user_age = selectedRow(age);
-    let user_job = selectedRow(job);
-    let user_email = selectedRow(email);
-    let user_tel = selectedRow(telephone);
-    let user_salutation = selectedRow(salutation);
-    let user_company = selectedRow(company);
+    // // get the data from the created bject from the db and put it inside some variables
+    // let user_id = selectedRow(id);
+    // let user_name = selectedRow(name);
+    // let user_age = selectedRow(age);
+    // let user_job = selectedRow(job);
+    // let user_email = selectedRow(email);
+    // let user_tel = selectedRow(telephone);
+    // let user_salutation = selectedRow(salutation);
+    // let user_company = selectedRow(company);
 
 };
 
